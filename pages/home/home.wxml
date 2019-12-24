@@ -1,0 +1,132 @@
+<!--pages/home/home.wxml-->
+<text>pages/home/home.wxml</text>
+<!-- 搜索 -->
+<view class="headers">
+  <navigator url="/pages/search/search">
+    <input type="text" placeholder-class="search" placeholder="买新房，耿优惠" />
+    <view class="iconfont icon-sousuo1"></view>
+  </navigator>
+</view>
+
+
+<!-- 内容 -->
+<scroll-view class="contents" scroll-y="true" style="height:{{scrollHeight}};" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
+  <swiper class="swiper1" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="id">
+      <swiper-item wx:key="id">
+        <image src="{{item}}" class="slide-image" bindtap="listenerButtonPreviewImage" data-index="{{index}}" class='img'  />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 菜单 -->
+  <view class="menu">
+    <navigator url="">
+      <image src="../../image/croom.png" />
+      <text>新房</text>
+    </navigator>
+    <navigator url="">
+      <image src="../../image/cshops.png" />
+      <text>商铺</text>
+    </navigator>
+    <navigator url="">
+      <image src="../../image/clive.png" />
+      <text>直播</text>
+    </navigator>
+    <navigator url="">
+      <image src="../../image/clooking.png" />
+      <text>地图找房</text>
+    </navigator>
+    <navigator url="">
+      <image src="../../image/cwallet.png" />
+      <text>返金卡</text>
+    </navigator>
+    <navigator url="">
+      <image src="../../image/cpreferential.png" />
+      <text>购房惠</text>
+    </navigator>
+    <navigator url="">
+      <image src="../../image/cooperation.png" />
+      <text>call房圈</text>
+    </navigator>
+    <navigator url="">
+      <image src="../../image/cweixin.png" />
+      <text>官方微信</text>
+    </navigator>
+  </view>
+  <!-- 推荐 -->
+  <view class="nows">
+    <navigator url="">
+      <view>
+        <text>本周值得买</text>
+        <text>单价1万1起</text>
+      </view>
+      <image src="" />
+    </navigator>
+    <navigator url="">
+      <view>
+        <text>本周值得买</text>
+        <text>单价1万1起</text>
+      </view>
+      <image src="" />
+    </navigator>
+    <navigator url="">
+      <view>
+        <text>本周值得买</text>
+        <text>单价1万1起</text>
+      </view>
+      <image src="" />
+    </navigator>
+    <navigator url="">
+      <view>
+        <text>本周值得买</text>
+        <text>单价1万1起</text>
+      </view>
+      <image src="" />
+    </navigator>
+  </view>
+  <view>
+    <swiper class="swiper2" indicator-dots="{{indicatorDotsa}}" autoplay="{{autoplaya}}" circular="true" duration="{{durationa}}">
+      <block wx:for="{{imgUrlsa}}" wx:key="id">
+        <swiper-item wx:key="id">
+          <image src="{{item}}" class="slide-imagea" bindtap="listenerButtonPreviewImagea" data-index="{{index}}" class='img'  />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="imageCounta">{{currenta+1}}/{{imgUrlsa.length}}</view>
+  </view>
+
+
+
+</scroll-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

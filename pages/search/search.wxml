@@ -1,0 +1,28 @@
+<!--pages/search/search.wxml-->
+<view class="headers">
+  <view>
+    <view class="iconfont icon-sousuo1" hidden="{{statea}}"></view>
+    <input type="text" placeholder-class="search" confirm-type="send" placeholder="买新房，耿优惠" bindinput ="search" bindconfirm="sends" />
+  </view>
+  <view>取消</view>
+</view>
+
+
+<view class="contents">
+  <view class="contents_box {{stateb?'hide':'show'}}">
+    <view>
+      <view>搜索历史</view>
+      <view class="iconfont icon-lajitong" bindtap="removek"></view>
+    </view>
+    <view>
+      <view wx:for="{{list}}" wx:key="id">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="without {{stateb?'show':'hide'}}">
+    <view>
+        <image src="../../image/searcha.png"></image>
+        <text>没有任何搜索历史</text>
+    </view>
+	</view>
+</view>

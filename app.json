@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0099FF",
+    "navigationBarTitleText": "中原楼市",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
