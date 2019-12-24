@@ -7,7 +7,7 @@ Page({
   data: {
     statea:false,
     indicatorDots: true,
-    indicatorDotsa: true,
+    indicatorDotsa: false,
     duration: 500,//幻灯片切换时长
     durationa: 500,//幻灯片切换时长
     autoplay: false,//自动播放
@@ -47,6 +47,15 @@ Page({
   },
   refresh: function (event) {
     console.log("到顶了---");
+  },
+  swiperChangea: function (e) {
+    var that = this;
+    console.log(e);
+    if (e.detail.source == 'touch') {
+      that.setData({
+        currenta: e.detail.current
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

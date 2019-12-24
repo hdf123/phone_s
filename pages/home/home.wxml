@@ -84,8 +84,8 @@
       <image src="" />
     </navigator>
   </view>
-  <view>
-    <swiper class="swiper2" indicator-dots="{{indicatorDotsa}}" autoplay="{{autoplaya}}" circular="true" duration="{{durationa}}">
+  <view class="swiperContainer">
+    <swiper class="swiper2" bindchange="swiperChangea" indicator-dots="{{indicatorDotsa}}" autoplay="{{autoplaya}}" circular="true" duration="{{durationa}}">
       <block wx:for="{{imgUrlsa}}" wx:key="id">
         <swiper-item wx:key="id">
           <image src="{{item}}" class="slide-imagea" bindtap="listenerButtonPreviewImagea" data-index="{{index}}" class='img'  />
