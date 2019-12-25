@@ -12,7 +12,11 @@ Page({
     durationa: 500,//幻灯片切换时长
     autoplay: false,//自动播放
     autoplaya: false,//自动播放
-    currenta: 0,//显示轮播位置
+    currentb: 0,//显示轮播位置
+    currentTabc: 0,
+    currentTabd: 0,
+    scrollTop: 0,
+    numa: 100,
     imgUrls: [//轮播
       '../../image/home_banner.png',
       '../../image/home_banner.png',
@@ -25,9 +29,42 @@ Page({
       '../../image/home_banner.png',
       '../../image/home_banner.png'
     ],
-    scrollTop:0,
-    scrollHeight: "100%"
+    consulting: [{
+      title: "强房企年内拿地3514亿，海外融资同比翻倍10强房企年内拿地3514亿，海外融资同比翻倍",
+      time: "2018年5月9日",
+      img: "../../image/carda.png"
+    }, {
+      title: "强房企年内拿地3511亿，海外融资同比翻倍",
+      time: "2018年5月9日",
+        img: "../../image/carda.png"
+    }, {
+      title: "强房企年内拿地3512亿，海外融资同比翻倍",
+      time: "2018年5月9日",
+        img: "../../image/carda.png"
+    }, {
+      title: "强房企年内拿地3513亿，海外融资同比翻倍",
+      time: "2018年5月9日",
+      img: "../../image/carda.png"
+    }],
+    preferential: [
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+      "正弘形城1号院洋房在售一号院高层优惠升级中",
+    ]
   },
+/**
+ * 滚动
+ */
   DownLoad1: function () {
     console.log('到底了---');
     var _this = this;
@@ -48,27 +85,66 @@ Page({
   refresh: function (event) {
     console.log("到顶了---");
   },
-  swiperChangea: function (e) {
+/**
+ * 轮播2
+ */
+  swiperChangeb: function (e) {
     var that = this;
     console.log(e);
     if (e.detail.source == 'touch') {
       that.setData({
-        currenta: e.detail.current
+        currentb: e.detail.current
       })
     }
+  },
+/**
+ * 轮播3
+ */
+  swichNav: function (e) {
+    var that = this;
+    if (this.data.currentTabc === e.currentTarget.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTabc: e.currentTarget.dataset.current
+      })
+    }
+    console.log(e.currentTarget.dataset.current);
+  },
+  swiperChangec: function (e) {
+    var that = this;
+    that.setData({ currentTabc: e.detail.current });
+  },
+/**
+ * 轮播4
+ */
+  swichNavd: function (e) {
+    var that = this;
+    if (this.data.currentTabd === e.currentTarget.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTabd: e.currentTarget.dataset.current
+      })
+    }
+    console.log(e.currentTarget.dataset.current);
+  },
+  swiperChanged: function (e) {
+    var that = this;
+    that.setData({ currentTabd: e.detail.current });
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(111)
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.animation = wx.createAnimation()
   },
 
   /**

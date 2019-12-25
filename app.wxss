@@ -19,6 +19,7 @@ view,scroll-view,swiper,swiper-item,movable-area,movable-view,cover-view,cover-i
   position:fixed;
   top:0;
   left:auto;
+  z-index:96;
 }
 .contents{
     width:750rpx;
