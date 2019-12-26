@@ -81,6 +81,7 @@ Page({
   },
   scroll: function (event) {
     console.log(3);
+    console.log(e.scrollTop, this.data.scroll_top)
   },
   refresh: function (event) {
     console.log("到顶了---");

@@ -112,7 +112,7 @@
   </view> 
   <swiper class="swiper3" current="{{currentTabc}}" duration="300" bindchange="swiperChangec">
       <swiper-item class="information">
-        <navigator class="ak" wx:for="{{consulting}}" wx:key="id">
+        <navigator class="swch" wx:for="{{consulting}}" wx:key="id">
           <view>
             <view>{{index+1}}{{item.title}}</view>
             <view>{{item.time}}</view>
@@ -121,7 +121,7 @@
         </navigator>
       </swiper-item>
       <swiper-item class="alerts">
-        <navigator class="ak" wx:for="{{consulting}}" wx:key="id">
+        <navigator class="swch" wx:for="{{consulting}}" wx:key="id">
           <view>
             <view>{{index+1}}{{item.title}}</view>
             <view>{{item.time}}</view>
@@ -175,40 +175,47 @@
   </view> 
   <swiper class="swiper4" current="{{currentTabd}}" duration="300" bindchange="swiperChanged">
       <swiper-item class="recommended">
-
-        <!-- <swiper class="swiper5" display-multiple-items="2.5" previous-margin="30rpx" next-margin="30rpx" duration="300">
-            <swiper-item>
-              <image src="../../image/carda.png" />
-              <view>高绿化率</view>
-              <view>绿化覆盖 空气清晰</view>
-            </swiper-item>
-            <swiper-item>222</swiper-item>
-            <swiper-item>333</swiper-item>
-        </swiper> -->
-
-        <scroll-view class="aos" scroll-x="true" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
-          <view class="hk">
+        <scroll-view class="scrollb" scroll-x="true" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
+          <view class="scroll_childb">
             <image src="../../image/carda.png" />
             <view>高绿化率</view>
             <view>绿化覆盖 空气清晰</view>
           </view>
-          <view class="hk">
+          <view class="scroll_childb">
+            <image src="../../image/carda.png" />
+            <view>高绿化率</view>
+            <view>绿化覆盖 空气清晰</view>
+          </view>
+          <view class="scroll_childb">
+            <image src="../../image/carda.png" />
+            <view>高绿化率</view>
+            <view>绿化覆盖 空气清晰</view>
+          </view>
+          <view class="scroll_childb">
             <image src="../../image/carda.png" />
             <view>高绿化率</view>
             <view>绿化覆盖 空气清晰</view>
           </view>
         </scroll-view>
 
-
-
-
-
-
-
-
-
-
-
+        <view class="list">
+          <navigator class="lists" url="" wx:for="{{numa}}" wx:key="id">
+            <image src="" />
+            <view>
+              <view>名稱</view>
+              <view class="region">
+                <view>郑东新区 郑东新区</view>
+                <view>建面107-400㎡</view>
+              </view>
+              <view class="features">
+                <view class="statea">在售</view>
+                <view>南北通透</view>
+                <view>配套成熟</view>
+              </view>
+              <view>售价待定</view>
+            </view>
+          </navigator>
+        </view>
 
       </swiper-item>
       <swiper-item class="news">

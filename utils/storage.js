@@ -40,5 +40,5 @@ module.exports = {
   put: put,
   git: git,
   remove: remove,
-  clear: clear,
+  clear: clear
 }
