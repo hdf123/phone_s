@@ -20,7 +20,7 @@
   </swiper>
   <!-- 菜单 -->
   <view class="menu">
-    <navigator url="">
+    <navigator url="/pages/NewDish/NewDish">
       <image src="../../image/croom.png" />
       <text>新房</text>
     </navigator>
@@ -203,7 +203,7 @@
           <navigator class="lists" url="" wx:for="{{numa}}" wx:key="id">
             <image src="" />
             <view>
-              <view>名稱</view>
+              <view>{{index+1}}名稱</view>
               <view class="region">
                 <view>郑东新区 郑东新区</view>
                 <view>建面107-400㎡</view>
