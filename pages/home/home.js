@@ -16,7 +16,9 @@ Page({
     currentTabc: 0,
     currentTabd: 0,
     scrollTop: 0,
-    numa: 100,
+    numa:100,
+    scrolla:false,
+    over:true,//控制滚动显示
     imgUrls: [//轮播
       '../../image/home_banner.png',
       '../../image/home_banner.png',
@@ -80,8 +82,31 @@ Page({
     }
   },
   scroll: function (event) {
-    console.log(3);
-    console.log(e.scrollTop, this.data.scroll_top)
+    var _this=this;
+    wx.createSelectorQuery().select('.swiper-tabd').boundingClientRect(function (rect) {
+      rect.id      // 节点的ID
+      rect.dataset // 节点的dataset
+      rect.left    // 节点的左边界坐标
+      rect.right   // 节点的右边界坐标
+      rect.top     // 节点的上边界坐标
+      rect.bottom  // 节点的下边界坐标
+      rect.width   // 节点的宽度
+      rect.height  // 节点的高度
+      var tops = rect.top;
+      console.log(tops);
+      if (tops<100){
+        console.log("固定");
+        _this.setData({
+          over:true
+        })
+      }else{
+        console.log("不固定");
+        _this.setData({
+          over:false
+        })
+      }
+    }).exec()
+
   },
   refresh: function (event) {
     console.log("到顶了---");

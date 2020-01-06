@@ -174,7 +174,8 @@
       </view>
   </view> 
   <swiper class="swiper4" current="{{currentTabd}}" duration="300" bindchange="swiperChanged">
-      <swiper-item class="recommended">
+   <!-- style="overflow:{{rolls}};" -->
+      <swiper-item class="recommended {{over==true?'over':''}}">
         <scroll-view class="scrollb" scroll-x="true" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
           <view class="scroll_childb">
             <image src="../../image/carda.png" />

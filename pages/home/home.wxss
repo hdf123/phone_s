@@ -136,11 +136,13 @@
 /* tab1 */
 .swiper-tabc,.swiper-tabd{
   width: 666rpx;
-	height: 60rpx;
-  margin:71rpx auto 0;
+	height:106rpx;
+  margin:46rpx auto 0;
+  padding-top:26rpx;
+  padding-bottom:18rpx;
   display: flex;
   justify-content: space-between;
-}  
+} 
 .swiper-tab-list{
   height:100%;
   display: flex;
@@ -164,7 +166,6 @@
 .swiper3{
   width: 100%; 
   height:890rpx;
-  padding-top:18rpx;
 }
 .swiper3 swiper-item{
   padding:0 30rpx;
@@ -249,17 +250,18 @@
   padding:5rpx 0 0 5rpx;
 }
 .swiper4{
-  width: 100%; 
-  height:89%;
+  width: 100%;
+  height:calc(100% - 106rpx);
 }
 .swiper4 swiper-item{
-  padding-top:56rpx;
+  padding-top:38rpx;
+}
+.over{
   overflow: auto;
 }
 .scrollb{
   width:100%;
   white-space: nowrap; 
-  border:1px solid red;
 }
 .scroll_childb{
   width:274rpx;
