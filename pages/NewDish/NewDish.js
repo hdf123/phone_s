@@ -66,34 +66,41 @@ Page({
       ak:"14000元/㎡",
       bk:"建面73-124㎡"
     },{
-      name: "美盛象湖100",
+      name: "美盛象湖",
       state: "待售",
       address: ["住宅", "惠济","邙山"],
       features: ["小户型", "车位充足", "绿化率高"],
       ak: "14500元/平",
       bk: "建面137-215㎡"
     },{
-      name: "美盛象湖101",
+      name: "美盛象湖",
       state: "售罄",
       address: ["商业类 ", "郑东新区", "白沙"],
       features: ["小户型", "车位充足", "绿化率高"],
       ak: "14500元/平",
       bk: "建面137-215㎡"
     }, {
-        name: "美盛象湖102",
-        state: "售罄",
-        address: ["商业类 ", "郑东新区", "白沙"],
-        features: ["小户型", "车位充足", "绿化率高"],
-        ak: "14500元/平",
-        bk: "建面137-215㎡"
+      name: "美盛象湖",
+      state: "售罄",
+      address: ["商业类 ", "郑东新区", "白沙"],
+      features: ["小户型", "车位充足", "绿化率高"],
+      ak: "14500元/平",
+      bk: "建面137-215㎡"
     }, {
-        name: "美盛象湖103",
-        state: "售罄",
-        address: ["商业类 ", "郑东新区", "白沙"],
-        features: ["小户型", "车位充足", "绿化率高"],
-        ak: "14500元/平",
-        bk: "建面137-215㎡"
-    }],
+      name: "美盛象湖",
+      state: "售罄",
+      address: ["商业类 ", "郑东新区", "白沙"],
+      features: ["小户型", "车位充足", "绿化率高"],
+      ak: "14500元/平",
+      bk: "建面137-215㎡"
+    }, {
+      name: "美盛象湖",
+      state: "在售",
+      address: ["商业类 ", "郑东新区", "白沙"],
+      features: ["小户型", "车位充足", "绿化率高"],
+      ak: "14500元/平",
+      bk: "建面137-215㎡"
+  }],
     arrk:[{
       imgs: "",
       name: "中岳俪景湾",
@@ -234,16 +241,17 @@ Page({
     var allGoodsFilte = this.data.allGoodsFilte;
     var checkArr = e.detail.value;
     var ind=checkArr[checkArr.length-1];
-    this.screening(checkArr,allGoodsFilte,ind);
+    this.screening(ind,allGoodsFilte,ind);
     this.setData({
       allGoodsFilte: allGoodsFilte,
-      area: ind
+      area: checkArr
     })
   },
   serviceValChange2: function (e) {
     var typek = this.data.typek;
     var checkArr = e.detail.value;
-    this.screening(checkArr, typek);
+    var ind=checkArr[checkArr.length-1];
+    this.screening(ind, typek);
     console.log(checkArr);
     this.setData({
       typek: typek,
@@ -253,7 +261,8 @@ Page({
   serviceValChange3: function (e) {
     var features = this.data.features;
     var checkArr = e.detail.value;
-    this.screening(checkArr, features);
+    var ind=checkArr[checkArr.length-1];
+    this.screening(ind, features);
     console.log(checkArr);
     this.setData({
       features: features,
@@ -263,7 +272,8 @@ Page({
   serviceValChange4: function (e) {
     var selling = this.data.selling;
     var checkArr = e.detail.value;
-    this.screening(checkArr, selling);
+    var ind=checkArr[checkArr.length-1];
+    this.screening(ind, selling);
     this.setData({
       selling: selling,
       SalesStatus: checkArr
@@ -363,55 +373,8 @@ Page({
       kk[i].checked = false;
     }
   },
-/**
- * 快捷选择与复选框内容同步
- */
-  passk(){
-    this.setData({
-      currentTab: 3
-    })
-  },
-  test1(){
-    var selling = this.data.selling;
-    selling[0].checked = !selling[0].checked;
-    this.setData({
-      selling:selling
-    })
-    this.obtain();
-    this.passk();
-  },
-  test2(){
-    var features = this.data.features;
-    features[0].checked = !features[0].checked;
-    this.setData({
-      features: features
-    })
-    this.obtain();
-    this.passk();
-  },
-  test3(){
-    var features = this.data.features;
-    features[4].checked = !features[4].checked;
-    this.setData({
-      features: features
-    })
-    this.obtain();
-    this.passk();
-  },
-  test4(){
-    var features = this.data.features;
-    features[1].checked = !features[1].checked;
-    this.setData({
-      features: features
-    })
-    this.obtain();
-    this.passk();
-  },
   bindDownLoad: function () {
-    console.log(2);
     var _this = this;
-    console.log(_this.data.trus);
-
     if (_this.data.trus) {
       _this.popMaskTest();
       _this.setData({ trus: false });
@@ -423,7 +386,7 @@ Page({
       }, 2000);
     }
   },
-  popMaskTest: function () {
+  popMaskTest: function (){
     wx.showToast({
       title: '加载中...',
       duration: 2000,

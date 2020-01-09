@@ -1,0 +1,217 @@
+<view class="swiperContainer">
+  <swiper class="swiper1" bindchange="swiperChange" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="id">
+      <swiper-item wx:key="id">
+        <image src="{{item}}" class="slide-image" bindtap="listenerButtonPreviewImage" data-index="{{index}}" class='img'  />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="imageCount">{{current+1}}/{{imgUrls.length}}</view>
+</view>
+<!-- 资料 -->
+<view class="details_box">
+  <view>{{names}}</view>
+  <view class="details_address">
+    <block wx:for="{{arrs}}" wx:key="id">
+      <view>{{item}}</view>
+    </block>
+  </view>
+  <view class="details_features">
+    <view class="stk {{state=='在售'?'statea':''}}" wx:if="{{state=='在售'}}">{{state}}</view>
+    <view class="stk {{state=='待售'?'stateb':''}}" wx:elif="{{state=='待售'}}">{{state}}</view>
+    <view class="stk {{state=='售罄'?'statec':''}}" wx:else>{{state}}</view>
+    <block wx:for="{{ars}}" wx:key="id">
+      <view class="stk">{{item}}</view>
+    </block>
+  </view>
+  <view class="introduce_box">
+    <view>
+      <text>均价</text>
+      <view>18000元/平</view>
+    </view>
+    <view>
+      <text>建筑面积</text>
+      <view>89-135㎡</view>
+    </view>
+    <view>
+      <text>建筑类型</text>
+      <view>写字楼</view>
+    </view>
+  </view>
+  <view class="showks">
+    <view>
+      <text>开盘时间:</text>
+      <text>2018年01月14日</text>
+    </view>
+    <image src='../../image/Back.png' mode='widthFix' />
+  </view>
+  <view class="showks">
+    <view>
+      <text>地址:</text>
+      <text class="address">中原郑州市中原路与西三环交汇处中原郑州市中原路与西三环交汇处…</text>
+    </view>
+    <image src='../../image/Back.png' mode='widthFix' />
+  </view>
+
+
+  <navigator  class="btn1" url="../information/information">更多信息</navigator>
+
+
+</view>
+<view class="latests">
+  <image src='../../image/latest.png' mode='widthFix' />
+  <swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="2000">
+    <block wx:for="{{msgList}}" wx:key="ids">
+      <swiper-item>
+        <view class="swiper_item">{{item.title}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+
+<!-- 户型 -->
+<navigator class="door doors" url="../model/model?name={{names}}&arr={{arrs}}">
+  <text>户型介绍(5)</text>
+  <view>
+    <text class="aas">全部户型</text>
+    <image src='../../image/Back.png' mode='widthFix' />
+  </view>
+</navigator>
+
+
+<!-- 户型展示 -->
+<view class="door_box">
+  <block wx:for="{{door}}" wx:key="id">
+    <navigator class="door_child" url="../preview/preview?arr={{item.area}}&muns={{item.many}}">
+      <view class="door_image">
+        <image src='{{item.url}}' mode='widthFix' />
+      </view>
+      <view>
+        <view class="pattern">
+          <view>{{item.name}}</view>
+          <view class="{{item.state=='在售'?'b_statea':''}}" wx:if="{{item.state=='在售'}}">{{item.state}}</view>
+          <view class="{{item.state=='待售'?'b_stateb':''}}" wx:elif="{{item.state=='待售'}}">{{item.state}}</view>
+          <view class="{{item.state=='售罄'?'b_statec':''}}" wx:else>{{item.state}}</view>
+        </view>
+        <view class="direction">
+          <block wx:for="{{item.area}}" wx:key="id">
+            <view>{{item}}</view>
+          </block>
+        </view>
+        <text class="waiting">{{item.many}}</text>
+      </view>
+    </navigator>
+  </block>
+</view>
+
+
+<!-- 位置周边 -->
+<view class="surrounding">位置周边</view>
+<view class="page-section page-section-gap">
+  <map id="myMap" style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}"
+    markers="{{markers}}" covers="{{covers}}" show-location>
+  </map>
+</view>
+
+
+<!-- 点评 -->
+<navigator class="door review" url="../comments/comments">
+  <text>用户点评(6)</text>
+  <view>
+    <text class="aas">查看更多</text>
+    <image src='../../image/Back.png' mode='widthFix' />
+  </view>
+</navigator>
+
+<view class="review_box">
+  <view wx:for="{{arr}}" wx:key="id">
+    <view class="review_object">
+      <view class="reimg">
+        <image src='' mode='widthFix' />
+        <text>{{item.name}}</text>
+      </view>
+      <view class="renum" data-index="{{index}}" bindtap='praise'>
+        <!-- 点赞过 -->
+        <block wx:if="{{item.collected==1}}">
+          <text class="reds">{{item.praise}}</text>
+          <image src='../../image/ab.png' mode='widthFix' />
+        </block>
+        <!-- 未点赞 -->
+        <block wx:else>
+          <text>{{item.praise}}</text>
+          <image src='../../image/aa.png' mode='widthFix' />
+        </block>
+      </view>
+    </view>
+    <view class="recontent">
+      {{item.evaluation}}
+      <!-- 判断是否有添加图片 -->
+      <view class="reimgs" wx:if="{{item.picture.length>0}}">
+        <block wx:for="{{item.picture}}" wx:key="id">
+          <image src='{{item}}' mode='widthFix' />
+        </block>
+      </view>
+    </view>
+    <view class="retime">{{item.time}}</view>
+  </view>
+  <navigator class="btn2" url="../review/review">我要点评</navigator>
+</view>
+
+
+<!-- 推荐 -->
+<view class="recommend">周边推荐</view>
+<swiper class="swiper2" previous-margin="30rpx" display-multiple-items="2.1">
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>名门翠园1</view>
+      <view>文化路三全路交叉口</view>
+      <view>均价：15000元/平</view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>名门翠园2</view>
+      <view>文化路三全路交叉口</view>
+      <view>均价：15000元/平</view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>名门翠园3</view>
+      <view>文化路三全路交叉口</view>
+      <view>均价：15000元/平</view>
+    </view>
+  </swiper-item>
+</swiper>
+<view class="recommend project">专题推荐</view>
+<swiper class="swiper3" previous-margin="30rpx" display-multiple-items="2.1">
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>钜惠北龙湖1</view>
+      <view>文化路三全路交叉口</view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>泰山誉景2</view>
+      <view>文化路三全路交叉口文化路三全路交叉口</view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swi_box">
+      <image src='' mode='widthFix' />
+      <view>名门翠园3</view>
+      <view>文化路三全路交叉口</view>
+    </view>
+  </swiper-item>
+</swiper>
+<view class="service">
+  <button open-type='contact'>联系客服</button>
+  <button>我要优惠</button>
+</view>

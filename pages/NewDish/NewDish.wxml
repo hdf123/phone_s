@@ -1,16 +1,13 @@
 <!-- 搜索 -->
-<view class="search_box">
-  <!-- <view>
-    <icon class="search_icon" type="search" size="14"></icon>
-  </view> -->
+<navigator class="search_box" url="/pages/search/search">
   <view class="iconfont icon-sousuo1"></view>
   <input type="text" class="search_input" placeholder="输入楼盘名/区域" value="" bindinput='SearchInput' bindconfirm="SearchConfirm" />
-</view>
+</navigator>
 
 
 <view class="box">
   <!-- 选择 -->
-  <view class="swiper-tab">  
+  <view class="swiper-tab">
       <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap="swichNav">
         区域<view class="triangle {{currentTab==0 ? 'triangles' : ''}}"></view>
       </view>  
@@ -30,21 +27,21 @@
   <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange" wx:if="{{state}}" catchtouchmove="true" bindtap='btn'>
     <swiper-item catchtouchmove='catchTouchMove'>
       <scroll-view class="scrollk" scroll-y="true" catchtap="btns">
+        <!-- 区域 -->
         <checkbox-group bindchange="checkboxChange1">
           <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr1}}" wx:key="id" bindtap='{{index==0?"limit1":""}}'>
             {{item.value}}
             <checkbox value="{{index}}" class="{{index==0?'hiddens':''}}" checked="{{item.checked}}"/>
           </label>
         </checkbox-group>
-
-
       </scroll-view>
       <view class="btn">
         <button data-one="{{one}}" catchtap='btn1'>确定</button>
       </view>
     </swiper-item>  
-    <swiper-item catchtouchmove='catchTouchMove'>
+    <swiper-item>
       <scroll-view class="scrollk" scroll-y="true" catchtap="btns">
+        <!-- 价格 -->
         <checkbox-group bindchange="checkboxChange2">
           <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr2}}" wx:key="id" bindtap='{{index==0?"limit2":""}}'>
             {{item.value}}
@@ -56,7 +53,7 @@
         <button data-two="{{two}}" bindtap='btn2'>确定</button> 
       </view>
     </swiper-item>  
-    <swiper-item catchtouchmove='catchTouchMove'>
+    <swiper-item>
       <scroll-view class="scrollk" scroll-y="true" catchtap="btns">
         <checkbox-group bindchange="checkboxChange3">
           <label class="checkbox {{item.checked?'is_checked':''}}" wx:for="{{arr3}}" wx:key="id" bindtap='{{index==0?"limit3":""}}'>
@@ -69,12 +66,11 @@
         <button data-three="{{three}}" bindtap='btn3'>确定</button> 
       </view>
     </swiper-item>  
-    <swiper-item catchtouchmove='catchTouchMove' class="last">
+    <swiper-item class="last">
       <scroll-view class="scrollks" scroll-y="true" catchtap="btns">
-        <!-- 面积 -->
         <view class="screening_box">
           <view class="screening">面积 (㎡)</view>
-          <checkbox-group class="check" bindchange="serviceValChange1">  
+          <checkbox-group class="check" bindchange="serviceValChange1">
             <view class="service_selection">  
               <block wx:for="{{allGoodsFilte}}" wx:key="id">  
                 <view class="ros">  
@@ -86,7 +82,6 @@
             </view>  
           </checkbox-group>
         </view>
-        <!-- 类型 -->
         <view class="screening_box">
           <view class="screening">物业类型</view>
           <checkbox-group class="check" bindchange="serviceValChange2">  
@@ -101,7 +96,6 @@
             </view>  
           </checkbox-group>
         </view>
-        <!-- 楼盘特色 -->
         <view class="screening_box">
           <view class="screening">楼盘特色</view>
           <checkbox-group class="check" bindchange="serviceValChange3">  
@@ -116,7 +110,6 @@
             </view>  
           </checkbox-group>
         </view>
-        <!-- 售卖状态 -->
         <view class="screening_box">
           <view class="screening">售卖状态</view>
           <checkbox-group class="check" bindchange="serviceValChange4">  
@@ -140,26 +133,8 @@
   </swiper>
 </view>
 
-<!-- 快捷选项 -->
-<view class="quick">
-  <view class="service_selection">
-    <view class="ros kkk" bindtap="test1">
-      <view class="checks {{selling[0].checked?'is_checkeds':''}}">{{selling[0].name}}</view>
-    </view>
-    <view class="ros" bindtap="test2">
-      <view class="checks {{features[0].checked?'is_checkeds':''}}">{{features[0].name}}</view>
-    </view>
-    <view class="ros" bindtap="test3">
-      <view class="checks {{features[4].checked?'is_checkeds':''}}">{{features[4].name}}</view>
-    </view>
-    <view class="ros" bindtap="test4">
-      <view class="checks {{features[1].checked?'is_checkeds':''}}">{{features[1].name}}</view>
-    </view>
-  </view>
-</view>
 <!-- 楼盘 -->
-<!-- <  style="height:{{winHeight-110}}px;" scroll-y="true"> -->
-<scroll-view class="scrollk" scroll-y="true" style="height:{{winHeight-110}}px;" bindscrolltolower="bindDownLoad">
+<scroll-view class="scrollk_box" scroll-y="true" bindscrolltolower="bindDownLoad">
   <block wx:for="{{arrp}}" wx:key="id">
     <navigator url='../buildings/buildings?name={{item.name}}&arr={{item.address}}&state={{item.state}}&ars={{item.features}}'>
       <view class="building_box">
