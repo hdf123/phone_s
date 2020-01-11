@@ -75,12 +75,12 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding:35rpx 6rpx 0 6rpx;
+  padding:17rpx 6rpx 17rpx 6rpx;
   box-shadow: 0rpx 3rpx 14rpx 0rpx rgba(153, 153, 153, 0.3);
 }
 .menu > navigator {
   width: 25%;
-  padding-bottom:35rpx;
+  padding:17rpx 0;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -32,7 +32,7 @@
       <image src="../../image/clive.png" />
       <text>直播</text>
     </navigator>
-    <navigator url="">
+    <navigator url="/pages/map/map">
       <image src="../../image/clooking.png" />
       <text>地图找房</text>
     </navigator>

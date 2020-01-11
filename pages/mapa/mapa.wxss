@@ -1,0 +1,4 @@
+/* pages/mapa/mapa.wxss */
+.aa{
+  border-radius:50%;
+}

@@ -3,7 +3,9 @@
     "pages/home/home",
     "pages/search/search",
     "pages/NewDish/NewDish",
-    "pages/buildings/buildings"
+    "pages/buildings/buildings",
+    "pages/map/map",
+    "pages/mapa/mapa"
   ],
   "window": {
     "backgroundTextStyle": "light",
