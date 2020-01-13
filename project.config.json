@@ -59,6 +59,13 @@
 					"pathName": "pages/mapa/mapa",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mapb/mapb",
+					"pathName": "pages/mapb/mapb",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
