@@ -1,53 +1,76 @@
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
-    latitude:34.7691233090938,
-    longitude:113.7734055519104,
     markers: [{
-      id: 1,
-      latitude:34.7691233090938,
-      longitude:113.7734055519104,
-      label:{
-        content: '金水区雅宝2号楼1201',  //文本
-        color: '#FF0202',  //文本颜色
-        borderRadius: 3,  //边框圆角
-        borderWidth: 1,  //边框宽度
-        borderColor: '#FF0202',  //边框颜色
-        bgColor: '#ffffff',  //背景色
-        padding: 5,  //文本边缘留白
-        textAlign: 'center'  //文本对齐方式。有效值: left, right, center
-      }
-    },{
-      id: 2,
-      latitude:34.768735524140006,
-      longitude:113.7734967470169,
-      label: {
-        content: " 2厦门市同安区政府 \n 100",
-        padding: 10,
-        borderRadius:100,
-        display: 'ALWAYS',
-        textAlign: 'center'
-      }
-    }],
+      id: 0,
+
+    }]
   },
   toaddress:function(e){
     console.log(e);
     var id =e.markerId;
     console.log(id);
   },
-  cdts:function(e){
-    console.log(e);
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-    var sy = wx.getSystemInfoSync(),mapWidth = sy.windowWidth*2,mapHeight = sy.windowHeight*2;
-    this.setData({
-      mapWidth:mapWidth,
-      mapHeight:mapHeight
+  onLoad() {
+    wx.getLocation({
+      success: (res) => {
+        const {
+          latitude,
+          longitude
+        } = res
+        console.log(latitude);
+        console.log(longitude);
+        this.setData({
+          latitude: latitude,
+          longitude: longitude,
+          markers: [{
+            id: 0,
+            iconPath: "../../image/area.png",
+            latitude:34.78977,
+            longitude:113.65072,
+            alpha: 1,
+            width: 200,
+            height: 200,
+            anchor:{x:.5,y:.5},
+            label: {
+              content: "今晚打老虎",
+              color: "#FFF",
+              fontSize: 14,
+              // anchorX:-70,
+              anchorX:-35,//字体大小的一般乘以字数
+              anchorY:-10.5,//字体大小乘以0.75
+              // anchorY:-30,
+              bgColor: "#29A9FE00",
+              borderWidth: 0,
+              borderColor: "#00BFFFAA",
+              borderRadius:100,
+              textAlign: 'center',
+              padding:0
+            }
+          }, {
+            id: 1,
+            iconPath: "../../image/area.png",
+            latitude:34.77977,
+            longitude:113.64072,
+            alpha: 1,
+            width: 200,
+            height: 200,
+            anchor:{x:.5,y:.5},
+            label: {
+              content: "今",
+              color: "#FFF",
+              fontSize: 14,
+              anchorX:-7,
+              anchorY:-10,
+              bgColor: "#00BFFF00",
+              borderWidth: 0,
+              borderColor: "#00BFFFAA",
+              borderRadius: 80,
+              textAlign: 'center',
+              padding:0
+            }
+          }]
+        });
+      }
     })
   }
 })

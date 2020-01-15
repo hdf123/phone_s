@@ -1,1 +1,1 @@
-<map id="myMap" style="width: {{mapWidth}}rpx; height: {{mapHeight}}rpx;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" show-location include-points="{{markers}}" bindcallouttap="toaddress" bindmarkertap="toaddress" bindtap="cdts"></map>
+<map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="15" show-location="true" markers="{{markers}}" circles='{{circles}}' bindmarkertap="toaddress"></map>
