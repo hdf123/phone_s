@@ -2,7 +2,6 @@ Page({
   data: {
     markers: [{
       id: 0,
-
     }]
   },
   toaddress:function(e){

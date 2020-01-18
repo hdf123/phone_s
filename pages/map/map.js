@@ -7,12 +7,55 @@ Page({
     latitude: 24.4795100000,
     longitude: 118.0894800000,
     ad:[{
+      iconPath: "../../image/area.png",
       id: 1,
+      width:0.1,
+      height:0.1,
       latitude: 24.5131500000,
       longitude: 118.1468600000,
       callout: {
-        content: "今晚打老虎",
-        padding:0,
+        color:"#fff",
+        content: "今晚打老虎1",
+        padding:10,
+        borderRadius:50,
+        bgColor:'#0099ff',
+        borderColor:'#0099ff',
+        fontSize: 14,
+        display:'ALWAYS',
+        textAlign: 'center'
+      }
+    },{
+      iconPath: "../../image/area.png",
+      id: 1,
+      width:0.1,
+      height:0.1,
+      latitude:24.51499190350442,
+      longitude:118.14978361129761,
+      callout: {
+        color:"#fff",
+        content: "今晚打老虎2",
+        padding:10,
+        borderRadius:50,
+        bgColor:'#0099ff',
+        borderColor:'#0099ff',
+        fontSize: 14,
+        display:'ALWAYS',
+        textAlign: 'center'
+      }
+    },{
+      iconPath: "../../image/area.png",
+      id: 1,
+      width:0.1,
+      height:0.1,
+      latitude:24.512453846061597,
+      longitude:118.15298080444336,
+      callout: {
+        color:"#fff",
+        content: "今晚打老虎3",
+        padding:10,
+        borderRadius:50,
+        bgColor:'#0099ff',
+        borderColor:'#0099ff',
         fontSize: 14,
         display:'ALWAYS',
         textAlign: 'center'
@@ -31,7 +74,7 @@ Page({
         content: " 1厦门湖里区政府 \n 70000元/㎡",
         padding:0,
         fontSize: 14,
-        anchorX:-56,//字体大小的一半乘以字数
+        anchorX:-56,//字体大小的一半乘以字数，空格也要计算在内
         anchorY:-20,//字体大小乘以0.75,多行就再乘以行数
         textAlign: 'center'
       }
@@ -48,7 +91,7 @@ Page({
         content: "2厦门市同安区政府\n100",
         padding:0,
         fontSize: 14,
-        anchorX:-63,//字体大小的一半乘以字数
+        anchorX:-63,//字体大小的一半乘以字数，空格也要计算在内
         anchorY:-20,//字体大小乘以0.75,多行就再乘以行数
         textAlign: 'center'
       }
@@ -65,7 +108,7 @@ Page({
         content: " 3厦门市集美区政府 \n 100",
         padding:0,
         fontSize: 14,
-        anchorX:-63,//字体大小的一半乘以字数
+        anchorX:-63,//字体大小的一半乘以字数，空格也要计算在内
         anchorY:-20,//字体大小乘以0.75,多行就再乘以行数
         textAlign: 'center'
       }
@@ -82,7 +125,7 @@ Page({
         content: " 4厦门市海沧区政府 \n 100",
         padding:0,
         fontSize: 14,
-        anchorX:-63,//字体大小的一半乘以字数
+        anchorX:-63,//字体大小的一半乘以字数，空格也要计算在内
         anchorY:-20,//字体大小乘以0.75,多行就再乘以行数
         textAlign: 'center'
       }
@@ -114,16 +157,13 @@ Page({
     _this.setData({
       markers:this.data.ad
     })
-    // _this.setData({
-    //   scales:16,
-    //   latitude:e.latitude,
-    //   longitude:e.longitude
-    // })
-    // console.log(e.latitude);
-    // console.log(e.longitude);
   },
-  test:function(e){
+  bdt:function(e){//点击地图获取当前位置坐标
     console.log(e);
+  },
+  callout:function(e){
+    console.log(e);
+
   },
   /**
    * 生命周期函数--监听页面加载
