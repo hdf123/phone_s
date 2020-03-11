@@ -128,7 +128,7 @@
   <view wx:for="{{arr}}" wx:key="id">
     <view class="review_object">
       <view class="reimg">
-        <image src='' mode='widthFix' />
+        <image src='../../image/cooperation.png' mode='widthFix' />
         <text>{{item.name}}</text>
       </view>
       <view class="renum" data-index="{{index}}" bindtap='praise'>
@@ -164,7 +164,7 @@
 <swiper class="swiper2" previous-margin="30rpx" display-multiple-items="2.1">
   <swiper-item>
     <view class="swi_box">
-      <image src='' mode='widthFix' />
+      <image src='../../image/rebate_banner.png' />
       <view>名门翠园1</view>
       <view>文化路三全路交叉口</view>
       <view>均价：15000元/平</view>
@@ -172,7 +172,7 @@
   </swiper-item>
   <swiper-item>
     <view class="swi_box">
-      <image src='' mode='widthFix' />
+      <image src='../../image/rebate_banner.png' />
       <view>名门翠园2</view>
       <view>文化路三全路交叉口</view>
       <view>均价：15000元/平</view>
@@ -180,7 +180,7 @@
   </swiper-item>
   <swiper-item>
     <view class="swi_box">
-      <image src='' mode='widthFix' />
+      <image src='../../image/rebate_banner.png' />
       <view>名门翠园3</view>
       <view>文化路三全路交叉口</view>
       <view>均价：15000元/平</view>
@@ -191,21 +191,21 @@
 <swiper class="swiper3" previous-margin="30rpx" display-multiple-items="2.1">
   <swiper-item>
     <view class="swi_box">
-      <image src='' mode='widthFix' />
+      <image src='../../image/rebate_banner.png' />
       <view>钜惠北龙湖1</view>
       <view>文化路三全路交叉口</view>
     </view>
   </swiper-item>
   <swiper-item>
     <view class="swi_box">
-      <image src='' mode='widthFix' />
+      <image src='../../image/rebate_banner.png' />
       <view>泰山誉景2</view>
       <view>文化路三全路交叉口文化路三全路交叉口</view>
     </view>
   </swiper-item>
   <swiper-item>
     <view class="swi_box">
-      <image src='' mode='widthFix' />
+      <image src='../../image/rebate_banner.png' />
       <view>名门翠园3</view>
       <view>文化路三全路交叉口</view>
     </view>

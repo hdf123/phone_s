@@ -223,7 +223,6 @@
 .door_image>image{
   width: 216rpx;
   max-height:229rpx;
-  background:rgba(192, 199, 204, 0.1);
 }
 .pattern{
   display:flex;
@@ -305,7 +304,6 @@ map{
   width: 72rpx;
 	height: 72rpx;
   border-radius:50%;
-  background: rgba(0, 153, 255, 0.3);
 }
 .reimg text{
   width:80%;

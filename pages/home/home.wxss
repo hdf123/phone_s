@@ -30,8 +30,6 @@
 .search,.icon-sousuo1{
   color:#999999;
 }
-
-
 /* 
 内容 
 */
@@ -131,7 +129,6 @@
   width: 90rpx;
 	height: 90rpx;
   border-radius: 50%;
-  background: red;
 }
 /* tab1 */
 .swiper-tabc,.swiper-tabd{
@@ -301,7 +298,6 @@
   width: 190rpx;
 	height: 144rpx;
   border-radius: 4rpx;
-  background: red;
 }
 .lists > view {
   width:466rpx;

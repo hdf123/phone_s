@@ -16,7 +16,7 @@ Page({
     currentTabc: 0,
     currentTabd: 0,
     scrollTop: 0,
-    numa:100,
+    numa:10,
     scrolla:false,
     over:true,//控制滚动显示
     imgUrls: [//轮播
@@ -68,12 +68,12 @@ Page({
  * 滚动
  */
   DownLoad1: function () {
-    console.log('到底了---');
+    console.log('到底了-----------------------------------------');
     var _this = this;
     if (_this.data.trua) {
       _this.popMaskTest();
       _this.setData({ trua: false });
-      setTimeout(function () {
+      setTimeout(function (){
         _this.setData({
           numa: _this.data.numa + 20,
           trua: true,
@@ -106,7 +106,6 @@ Page({
         })
       }
     }).exec()
-
   },
   refresh: function (event) {
     console.log("到顶了---");
@@ -205,7 +204,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log(123);
   },
 
   /**

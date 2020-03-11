@@ -10,7 +10,7 @@
 
 
 <!-- 内容 -->
-<scroll-view class="contents" scroll-y="true" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
+<scroll-view class="contents" scroll-y="true">
   <swiper class="swiper1" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="id">
       <swiper-item wx:key="id">
@@ -20,11 +20,11 @@
   </swiper>
   <!-- 菜单 -->
   <view class="menu">
-    <navigator url="/pages/NewDish/NewDish">
+    <navigator url="/pages/building/building">
       <image src="../../image/croom.png" />
       <text>新房</text>
     </navigator>
-    <navigator url="">
+    <navigator url="/pages/NewDish/NewDish">
       <image src="../../image/cshops.png" />
       <text>商铺</text>
     </navigator>
@@ -60,28 +60,28 @@
         <text>本周值得买</text>
         <text>单价1万1起</text>
       </view>
-      <image src="" />
+      <image src="../../image/cooperation.png" />
     </navigator>
     <navigator url="">
       <view>
         <text>本周值得买</text>
         <text>单价1万1起</text>
       </view>
-      <image src="" />
+      <image src="../../image/cooperation.png" />
     </navigator>
     <navigator url="">
       <view>
         <text>本周值得买</text>
         <text>单价1万1起</text>
       </view>
-      <image src="" />
+      <image src="../../image/cooperation.png" />
     </navigator>
     <navigator url="">
       <view>
         <text>本周值得买</text>
         <text>单价1万1起</text>
       </view>
-      <image src="" />
+      <image src="../../image/cooperation.png" />
     </navigator>
   </view>
   <view class="swiperContainer">
@@ -175,8 +175,57 @@
   </view> 
   <swiper class="swiper4" current="{{currentTabd}}" duration="300" bindchange="swiperChanged">
    <!-- style="overflow:{{rolls}};" -->
-      <swiper-item class="recommended {{over==true?'over':''}}">
-        <scroll-view class="scrollb" scroll-x="true" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
+      <swiper-item class="recommended" tapsd="onReachBottom">
+        <scroll-view scroll-y="true" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
+
+
+          <scroll-view class="scrollb" scroll-x="true">
+            <view class="scroll_childb">
+              <image src="../../image/carda.png" />
+              <view>高绿化率</view>
+              <view>绿化覆盖 空气清晰</view>
+            </view>
+            <view class="scroll_childb">
+              <image src="../../image/carda.png" />
+              <view>高绿化率</view>
+              <view>绿化覆盖 空气清晰</view>
+            </view>
+            <view class="scroll_childb">
+              <image src="../../image/carda.png" />
+              <view>高绿化率</view>
+              <view>绿化覆盖 空气清晰</view>
+            </view>
+            <view class="scroll_childb">
+              <image src="../../image/carda.png" />
+              <view>高绿化率</view>
+              <view>绿化覆盖 空气清晰</view>
+            </view>
+          </scroll-view>
+
+          <view class="list">
+            <navigator class="lists" url="" wx:for="{{numa}}" wx:key="id">
+              <image src="../../image/carda.png" />
+              <view>
+                <view>{{index+1}}名稱</view>
+                <view class="region">
+                  <view>郑东新区 郑东新区</view>
+                  <view>建面107-400㎡</view>
+                </view>
+                <view class="features">
+                  <view class="statea">在售</view>
+                  <view>南北通透</view>
+                  <view>配套成熟</view>
+                </view>
+                <view>售价待定</view>
+              </view>
+            </navigator>
+          </view>
+        </scroll-view>
+
+
+      </swiper-item>
+      <swiper-item class="news {{over==true?'over':''}}">
+        <scroll-view class="scrollb" scroll-x="true">
           <view class="scroll_childb">
             <image src="../../image/carda.png" />
             <view>高绿化率</view>
@@ -201,7 +250,7 @@
 
         <view class="list">
           <navigator class="lists" url="" wx:for="{{numa}}" wx:key="id">
-            <image src="" />
+            <image src="../../image/carda.png" />
             <view>
               <view>{{index+1}}名稱</view>
               <view class="region">
@@ -217,10 +266,6 @@
             </view>
           </navigator>
         </view>
-
-      </swiper-item>
-      <swiper-item class="news">
-        新房
       </swiper-item>
       <swiper-item class="quality">
         品质房

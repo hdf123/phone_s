@@ -394,32 +394,6 @@ Page({
       //如果有透明蒙层，弹窗的期间不能点击文档内容 
     })
   },
-  scroll: function (event) {
-    var _this=this;
-    wx.createSelectorQuery().select('.box').boundingClientRect(function (rect) {
-      rect.id      // 节点的ID
-      rect.dataset // 节点的dataset
-      rect.left    // 节点的左边界坐标
-      rect.right   // 节点的右边界坐标
-      rect.top     // 节点的上边界坐标
-      rect.bottom  // 节点的下边界坐标
-      rect.width   // 节点的宽度
-      rect.height  // 节点的高度
-      var tops = rect.top;
-      console.log(tops);
-      if (tops<100){
-        console.log("固定");
-        _this.setData({
-          over:true
-        })
-      }else{
-        console.log("不固定");
-        _this.setData({
-          over:false
-        })
-      }
-    }).exec()
-  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -473,7 +447,6 @@ Page({
   onPullDownRefresh: function () {
   // "enablePullDownRefresh": true, //开启下拉刷新；
   // "onReachBottomDistance": 50, //页面上拉触底事件触发时距页面底部距离，单位为px。
-    
   },
 
   /**

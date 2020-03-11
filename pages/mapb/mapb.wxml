@@ -1,1 +1,0 @@
-<map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="15" show-location="true" markers="{{markers}}" circles='{{circles}}' bindmarkertap="toaddress"></map>

@@ -2,11 +2,11 @@
   "pages": [
     "pages/home/home",
     "pages/search/search",
-    "pages/NewDish/NewDish",
+    "pages/building/building",
     "pages/buildings/buildings",
+    "pages/NewDish/NewDish",
     "pages/map/map",
-    "pages/mapa/mapa",
-    "pages/mapb/mapb"
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

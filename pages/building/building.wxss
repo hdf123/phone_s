@@ -1,157 +1,30 @@
-/* pages/NewDish/NewDish.wxss */
-.headers{
-  height:88rpx;
+/* 搜索 */
+.search_box{
+	width:662rpx;
+	height: 56rpx;
+	background-color: #f5f5f5;
+	border-radius: 4rpx;
+  margin:16rpx auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  position:relative;
 }
-.headers .lefts{
-  width:88rpx;
+.search_box>view{
+  width:56rpx;
   height:100%;
+  font-size:25rpx;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.headers .rights{
-  width:88rpx;
+.search_input{
+  width:606rpx;
   height:100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  line-height:56rpx;
+  font-size: 24rpx;
 }
-.headers .rights image{
-  width: 36rpx;
-	height: 36rpx;
-}
-.icon-arrowleft{
-  color:#6f6f6f;
-  font-size:60rpx;
-}
-.headers>navigator{
-  width: 566rpx;
-	height: 72rpx;
-  border-radius: 8rpx;
-  background-color: #ffffff;
-  border: solid 1rpx #e5e5e5;
+.box{
   position: relative;
 }
-.headers>navigator>input{
-  width:100%;
-  height:100%;
-  padding:0 10rpx;
-}
-.search{
-  text-align: center;
-}
-.headers>navigator .icon-sousuo1{
-  font-size:30rpx;
-  position: absolute;
-  top:20rpx;
-  left:22%;
-}
-.search,.icon-sousuo1{
-  color:#999999;
-}
-/* 
-内容 
-*/
-.contents{
-  top:88rpx;
-  bottom:0;
-}
-.contents .tit{
-  font-size: 40rpx;
-  margin:59rpx 40rpx 25rpx 40rpx;
-}
-.menu {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  padding:18rpx 0 16rpx 0;
-}
-.menu > navigator {
-  width: 25%;
-  margin:20rpx 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.menu > navigator > image {
-  width: 86rpx;
-	height: 86rpx;
-  background: none;
-}
-.menu > navigator > text {
-  margin-top:19rpx;
-  color: #666666;
-  font-size: 24rpx;
-}
-.banners {
-  width: 678rpx;
-	height: 180rpx;
-  display: block;
-  margin: 0 auto;
-}
-.banners > image {
-  width: 100%;
-  height: 100%;
-}
-
-.nows {
-  width:678rpx;
-  display: flex;
-  justify-content: space-between;
-  margin:36rpx auto 0;
-}
-.nows navigator{
-  border-radius: 4rpx;
-  border: 1rpx solid #e5e5e5;
-}
-.nows > navigator{
-  width: 329rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding:36rpx 28rpx 0 28rpx;
-}
-.nows > navigator image {
-  width: 243rpx;
-	height: 151rpx;
-  margin:39rpx auto 0;
-}
-.nows > view {
-  width: 329rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.nows > view > navigator{
-  width: 329rpx;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding:36rpx 0 0 27rpx;
-}
-.nows > view > navigator > view > text {
-  display: block;
-  margin-bottom:37rpx;
-}
-.nows > view > navigator > image {
-  width: 73rpx;
-	height: 69rpx;
-}
-.nows > view > navigator:nth-child(2) {
-  margin-top:20rpx;
-}
-.nows .texts_box view {
-  font-size: 28rpx;
-}
-.nows .texts_box text{
-  color: #999999;
-  font-size: 24rpx;
-  margin-top:17rpx;
-}
-
 /* 选择 */
 .swiper-tab{  
   width: 100%;  
@@ -200,11 +73,11 @@
   background:white;
 }
 .scrollk_box{
-  /* position:absolute;
+  position:absolute;
   top:168rpx;
   left:0;
   right:0;
-  bottom:0; */
+  bottom:0;
 }
 .scrollk{
   height:600rpx;

@@ -1,0 +1,43 @@
+<!-- <scroll-view scroll-y="true" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
+  <view>
+    <scroll-view scroll-x="true">
+      <view class="hang" wx:for="5" wx:key="id"><view>
+    </scroll-view>
+  </view>
+
+  <view class="list" wx:for="10" wx:key="id"><view>
+</scroll-view> -->
+
+ <!-- <view class="box">
+  <view class="lis">
+    <view wx:for="{{munc}}" wx:key="id">{{index+1}}</view>
+  </view>
+
+ <view class="boxs">
+    <view class="hang">
+        <view wx:for="{{muna}}" wx:key="id">{{index+1}}</view>
+    </view>
+    <view class="lists {{sta==true?'sta':''}}">
+      <view wx:for="{{munb}}" wx:key="id">{{index+1}}</view>
+    </view>
+  </view>
+</view> -->
+
+<view class="heads">顶部</view>
+<view class="box">
+  <view class="lis">
+    <view wx:for="{{munc}}" wx:key="id">{{index+1}}</view>
+  </view>
+
+
+  <view class="boxk">
+    <view class="boxs {{tops==true?'tops':''}}">
+      <view class="hang">
+          <view wx:for="{{muna}}" wx:key="id">{{index+1}}</view>
+      </view>
+      <view class="lists {{sta==true?'sta':''}}">
+        <view wx:for="{{munb}}" wx:key="id">{{index+1}}</view>
+      </view>
+    </view>
+  </view>
+</view>

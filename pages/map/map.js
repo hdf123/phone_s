@@ -71,7 +71,7 @@ Page({
       longitude: 118.1468600000,
       label: {
         color: "#FFF",
-        content: " 1厦门湖里区政府 \n 70000元/㎡",
+        content: "1厦门湖里区政府\n70000元/㎡",
         padding:0,
         fontSize: 14,
         anchorX:-56,//字体大小的一半乘以字数，空格也要计算在内
@@ -105,7 +105,7 @@ Page({
       longitude: 118.0972700000,
       label: {
         color: "#FFF",
-        content: " 3厦门市集美区政府 \n 100",
+        content: "3厦门市集美区政府\n100",
         padding:0,
         fontSize: 14,
         anchorX:-63,//字体大小的一半乘以字数，空格也要计算在内
@@ -122,7 +122,7 @@ Page({
       longitude: 118.0329300000,
       label: {
         color: "#FFF",
-        content: " 4厦门市海沧区政府 \n 100",
+        content: "4厦门市海沧区政府\n100",
         padding:0,
         fontSize: 14,
         anchorX:-63,//字体大小的一半乘以字数，空格也要计算在内
@@ -139,10 +139,10 @@ Page({
       longitude: 118.2478900000,
       label: {
         color: "#FFF",
-        content: " 5厦门市翔安区政府 \n 100",
+        content: "5厦门市翔安区政府\n100",
         padding:0,
         fontSize: 14,
-        anchorX:-63,//字体大小的一半乘以字数
+        anchorX:-63,//字体大小的一半乘以字数，空格也要计算在内
         anchorY:-20,//字体大小乘以0.75,多行就再乘以行数
         textAlign: 'center'
       }
@@ -152,10 +152,9 @@ Page({
   },
   toaddress:function(e){
     console.log(e);
-    var id =e.markerId,_this=this;
-    console.log(id);
+    var _this=this;
     _this.setData({
-      markers:this.data.ad
+      markers:_this.data.ad
     })
   },
   bdt:function(e){//点击地图获取当前位置坐标
@@ -163,7 +162,7 @@ Page({
   },
   callout:function(e){
     console.log(e);
-
+    console.log(e.markerId);
   },
   /**
    * 生命周期函数--监听页面加载
