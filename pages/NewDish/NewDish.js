@@ -375,6 +375,7 @@ Page({
   },
   bindDownLoad: function () {
     var _this = this;
+    console.log(12312313);
     if (_this.data.trus) {
       _this.popMaskTest();
       _this.setData({ trus: false });
@@ -407,6 +408,7 @@ Page({
       rect.height  // 节点的高度
       var tops = rect.top;
       console.log(tops);
+      
       if (tops<100){
         console.log("固定");
         _this.setData({

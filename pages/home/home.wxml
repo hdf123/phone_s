@@ -3,7 +3,7 @@
 <!-- 搜索 -->
 <view class="headers">
   <navigator url="/pages/search/search">
-    <input type="text" placeholder-class="search" placeholder="买新房，耿优惠" />
+    <input type="text" placeholder-class="search" disabled='false' placeholder="买新房，耿优惠" />
     <view class="iconfont icon-sousuo1"></view>
   </navigator>
 </view>
@@ -84,6 +84,7 @@
       <image src="../../image/cooperation.png" />
     </navigator>
   </view>
+
   <view class="swiperContainer">
     <swiper class="swiper2" bindchange="swiperChangeb" indicator-dots="{{indicatorDotsa}}" autoplay="{{autoplaya}}" circular="true" duration="{{durationa}}">
       <block wx:for="{{imgUrlsa}}" wx:key="id">
@@ -110,6 +111,7 @@
         <view></view>
       </view>
   </view> 
+
   <swiper class="swiper3" current="{{currentTabc}}" duration="300" bindchange="swiperChangec">
       <swiper-item class="information">
         <navigator class="swch" wx:for="{{consulting}}" wx:key="id">
@@ -139,6 +141,7 @@
         </navigator>
       </swiper-item>  
   </swiper>
+
   <view class="btn">
     <view>
       <text>换一换</text>
@@ -173,12 +176,10 @@
         <view></view>
       </view>
   </view> 
+
   <swiper class="swiper4" current="{{currentTabd}}" duration="300" bindchange="swiperChanged">
-   <!-- style="overflow:{{rolls}};" -->
       <swiper-item class="recommended" tapsd="onReachBottom">
         <scroll-view scroll-y="true" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
-
-
           <scroll-view class="scrollb" scroll-x="true">
             <view class="scroll_childb">
               <image src="../../image/carda.png" />
@@ -221,8 +222,6 @@
             </navigator>
           </view>
         </scroll-view>
-
-
       </swiper-item>
       <swiper-item class="news {{over==true?'over':''}}">
         <scroll-view class="scrollb" scroll-x="true">

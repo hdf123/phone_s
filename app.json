@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/homea/homea",
     "pages/home/home",
     "pages/search/search",
     "pages/building/building",
     "pages/buildings/buildings",
     "pages/NewDish/NewDish",
     "pages/map/map",
-    "pages/test/test"
+    "pages/tc/tc"
   ],
   "window": {
     "backgroundTextStyle": "light",
