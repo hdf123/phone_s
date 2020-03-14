@@ -17,6 +17,7 @@ Page({
     numa: 10,
     heis: 0,//定位距离的高度
     topk: false,
+    trus: true,//加载状态
     imgUrls: [//轮播
       '../../image/home_banner.png',
       '../../image/home_banner.png',
@@ -48,18 +49,16 @@ Page({
     }],
     preferential: [
       "正弘形城1号院洋房在售一号院高层优惠升级中",
-      "正弘形城1号院洋房在售一号院高层优惠升级中",
-      "正弘形城1号院洋房在售一号院高层优惠升级中",
-      "正弘形城1号院洋房在售一号院高层优惠升级中",
-
-      "正弘形城1号院洋房在售一号院高层优惠升级中",
-      "正弘形城1号院洋房在售一号院高层优惠升级中",
-      "正弘形城1号院洋房在售一号院高层优惠升级中",
-      "正弘形城1号院洋房在售一号院高层优惠升级中",
-
-      "正弘形城1号院洋房在售一号院高层优惠升级中",
-      "正弘形城1号院洋房在售一号院高层优惠升级中",
-      "正弘形城1号院洋房在售一号院高层优惠升级中",
+      "正弘形城2号院洋房在售一号院高层优惠升级中",
+      "正弘形城3号院洋房在售一号院高层优惠升级中",
+      "正弘形城4号院洋房在售一号院高层优惠升级中",
+      "正弘形城5号院洋房在售一号院高层优惠升级中",
+      "正弘形城6号院洋房在售一号院高层优惠升级中",
+      "正弘形城7号院洋房在售一号院高层优惠升级中",
+      "正弘形城8号院洋房在售一号院高层优惠升级中",
+      "正弘形城9号院洋房在售一号院高层优惠升级中",
+      "正弘形城10号院洋房在售一号院高层优惠升级中",
+      "正弘形城11号院洋房在售一号院高层优惠升级中",
     ]
   },
   // 监听页面滚动的距离
@@ -67,12 +66,10 @@ Page({
     var _this = this;
     console.log(e.scrollTop)
     if (e.scrollTop >= _this.data.heis) {
-      console.log("定位");
       _this.setData({
         topk: true
       })
     } else {
-      console.log("取消定位");
       _this.setData({
         topk: false
       })
@@ -81,7 +78,7 @@ Page({
   /**
    * 轮播2
    */
-  swiperChangeb: function (e) {
+  swiperChangeb: function (e){
     var that = this;
     console.log(e);
     if (e.detail.source == 'touch') {
@@ -134,14 +131,11 @@ Page({
     var _this = this, heis = '';
     wx.createSelectorQuery().select('.headers').boundingClientRect(function (rect) {
       heis = rect.height;
-      console.log("顶部高度----" + heis);
     }).exec()
     wx.createSelectorQuery().select('.swiper-tabd').boundingClientRect(function (rect) {
-      console.log(rect.top);
       _this.setData({
         heis: rect.top - heis
       })
-      console.log(_this.data.heis);
     }).exec()
   },
 
@@ -177,19 +171,26 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    wx.showLoading({
-      title: '加载中',
-      mask: true
-    })
-    setTimeout(function () {
-      wx.hideLoading()
-    }, 1000)
-
-    this.setData({
-      numa: this.data.numa + 1
+    var _this = this;
+    if (_this.data.trus){
+      _this.popMaskTest();
+      _this.setData({ trus: false });
+      setTimeout(function () {
+        _this.setData({
+          numa: _this.data.numa + 1,
+          trus: true
+        });
+      }, 2000);
+    }
+  },
+  popMaskTest: function () {
+    wx.showToast({
+      title: '加载中...',
+      duration: 2000,
+      mask: true    //是否有透明蒙层，默认为false 
+      //如果有透明蒙层，弹窗的期间不能点击文档内容 
     })
   },
-
   /**
    * 用户点击右上角分享
    */

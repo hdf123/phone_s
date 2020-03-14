@@ -14,7 +14,7 @@
   <view class="menu">
     <navigator url="">
       <image src="../../image/menu01.png" />
-      <text>全部楼盘</text>
+      <text>全部楼</text>
     </navigator>
     <navigator url="">
       <image src="../../image/menu02.png" />

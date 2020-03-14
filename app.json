@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/NewDish/NewDish",
     "pages/home/home",
     "pages/homea/homea",
     "pages/search/search",
+    "pages/NewDish/NewDish",
     "pages/building/building",
     "pages/buildings/buildings",
     "pages/map/map"

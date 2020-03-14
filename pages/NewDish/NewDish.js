@@ -18,7 +18,7 @@ Page({
     trus: true,//加载状态
     topk:false,
     heis:'',
-    nums:0,
+    numa: 10,
     arr1: [{ value: '不限',checked: true},{ value: '金水区' }, { value: '二七区' }, { value: '中原区' },
       { value: '郑东新区' }, { value: '管城区' }, { value: '惠济区' }
     ],
@@ -277,7 +277,7 @@ Page({
       featuresk: checkArr
     })
   },
-  serviceValChange4: function (e) {
+  serviceValChange4: function (e){
     var selling = this.data.selling;
     var checkArr = e.detail.value;
     var ind=checkArr[checkArr.length-1];
@@ -380,20 +380,6 @@ Page({
       kk[i].checked = false;
     }
   },
-  bindDownLoad: function () {
-    var _this = this;
-    console.log(12312313);
-    if (_this.data.trus) {
-      _this.popMaskTest();
-      _this.setData({ trus: false });
-      setTimeout(function () {
-        _this.setData({
-          arrp: _this.data.arrp.concat(_this.data.arrk),
-          trus: true,
-        });
-      }, 2000);
-    }
-  },
   popMaskTest: function (){
     wx.showToast({
       title: '加载中...',
@@ -420,14 +406,12 @@ Page({
   // 监听页面滚动的距离
   onPageScroll: function (e) {
     var _this = this;
-    console.log(e.scrollTop)
+    // console.log(e.scrollTop)
     if (e.scrollTop >= _this.data.heis) {
-      console.log("定位");
       _this.setData({
         topk: true
       })
     } else {
-      console.log("取消定位");
       _this.setData({
         topk: false
       })
@@ -504,7 +488,17 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    var _this = this;
+    if (_this.data.trus) {
+      _this.popMaskTest();
+      _this.setData({ trus: false });
+      setTimeout(function () {
+        _this.setData({
+          arrp: _this.data.arrp.concat(_this.data.arrk),
+          trus: true,
+        });
+      }, 2000);
+    }
   },
 
   /**

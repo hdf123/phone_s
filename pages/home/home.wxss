@@ -31,7 +31,13 @@
   color:#999999;
 }
 
-
+/* 
+内容 
+*/
+.contents{
+  top:88rpx;
+  bottom:0;
+}
 /* 轮播 */
 .swiper1{
   height:325rpx;

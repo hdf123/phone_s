@@ -79,7 +79,7 @@
 }
 .menu > navigator {
   width: 25%;
-  margin:20rpx 0;
+  padding:20rpx 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,9 +90,15 @@
   background: none;
 }
 .menu > navigator > text {
+  display:inline-block;
+  width:100%;
   margin-top:19rpx;
   color: #666666;
   font-size: 24rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .banners {
   width: 678rpx;
@@ -126,6 +132,19 @@
   width: 243rpx;
 	height: 151rpx;
   margin:39rpx auto 0;
+}
+.nows > navigator>view>view{
+  font-size: 28rpx;
+}
+.nows > navigator>view>text{
+  display:inline-block;
+  width:100%;
+  color: #999999;
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
 }
 .nows > view {
   width: 329rpx;

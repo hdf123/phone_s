@@ -1,7 +1,7 @@
 <!-- 搜索 -->
 <navigator class="search_box" url="/pages/search/search">
   <view class="iconfont icon-sousuo1"></view>
-  <input type="text" class="search_input" placeholder="输入楼盘名/区域" value="" bindinput='SearchInput' bindconfirm="SearchConfirm" />
+  <input type="text" class="search_input" disabled='false' placeholder="输入楼盘名/区域" value="" bindinput='SearchInput' bindconfirm="SearchConfirm" />
 </navigator>
 
 
@@ -10,16 +10,16 @@
   <view class="swiper-tab">
       <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap="swichNav">
         区域<view class="triangle {{currentTab==0 ? 'triangles' : ''}}"></view>
-      </view>  
+      </view>
       <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" catchtap="swichNav">
         价格<view class="triangle {{currentTab==1 ? 'triangles' : ''}}"></view>
-      </view>  
+      </view>
       <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">
         户型<view class="triangle {{currentTab==2 ? 'triangles' : ''}}"></view>
-      </view>  
+      </view>
       <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">
         筛选<view class="triangle {{currentTab==3 ? 'triangles' : ''}}"></view>
-      </view>  
+      </view>
   </view>
   
 
