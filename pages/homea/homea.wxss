@@ -130,21 +130,30 @@
 /* tab1 */
 .swi_box{
   width:100%;
-	height:106rpx;
+  height:52rpx;
+  margin-top:55rpx;
 }
 .swiper-tabc,.swiper-tabd{
   width:100%;
-  padding:71rpx 42rpx 18rpx 42rpx;
-  display: flex;
+  padding:0 42rpx;
+  display:flex;
   justify-content: space-between;
 } 
+.swiper-tabc{
+  padding:71rpx 42rpx 16rpx 42rpx;
+}
+.swiper-tabd{
+  padding:16rpx 42rpx;
+}
 .topk{
   position:fixed;
   top:88rpx;
   left:0;
+  z-index:1;
+  background:white;
 }
 .swiper-tab-list{
-  height:48rpx;
+  height:52rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -253,15 +262,8 @@
 }
 
 /* 轮播 */
-.swiper4{
-  width: 100%;
-  height:2000rpx;
-}
-.swiper4 swiper-item{
+.boxm{
   padding-top:38rpx;
-}
-.over{
-  overflow: auto;
 }
 .scrollb{
   width:100%;

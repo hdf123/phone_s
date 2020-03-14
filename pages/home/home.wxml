@@ -1,6 +1,3 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
-<!-- 搜索 -->
 <view class="headers">
   <navigator url="/pages/search/search">
     <input type="text" placeholder-class="search" disabled='false' placeholder="买新房，耿优惠" />
@@ -8,305 +5,216 @@
   </navigator>
 </view>
 
+<swiper class="swiper1" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="id">
+    <swiper-item wx:key="id">
+      <image src="{{item}}" class="slide-image" bindtap="listenerButtonPreviewImage" data-index="{{index}}" class='img'  />
+    </swiper-item>
+  </block>
+</swiper>
 
-<!-- 内容 -->
-<scroll-view class="contents" scroll-y="true">
-  <swiper class="swiper1" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
-    <block wx:for="{{imgUrls}}" wx:key="id">
+<!-- 菜单 -->
+<view class="menu">
+  <navigator url="/pages/building/building">
+    <image src="../../image/croom.png" />
+    <text>新房</text>
+  </navigator>
+  <navigator url="/pages/NewDish/NewDish">
+    <image src="../../image/cshops.png" />
+    <text>商铺</text>
+  </navigator>
+  <navigator url="">
+    <image src="../../image/clive.png" />
+    <text>直播</text>
+  </navigator>
+  <navigator url="/pages/map/map">
+    <image src="../../image/clooking.png" />
+    <text>地图找房</text>
+  </navigator>
+  <navigator url="">
+    <image src="../../image/cwallet.png" />
+    <text>返金卡</text>
+  </navigator>
+  <navigator url="">
+    <image src="../../image/cpreferential.png" />
+    <text>购房惠</text>
+  </navigator>
+  <navigator url="">
+    <image src="../../image/cooperation.png" />
+    <text>call房圈</text>
+  </navigator>
+  <navigator url="">
+    <image src="../../image/cweixin.png" />
+    <text>官方微信</text>
+  </navigator>
+</view>
+
+<!-- 推荐 -->
+<view class="nows">
+  <navigator url="">
+    <view>
+      <text>本周值得买</text>
+      <text>单价1万1起</text>
+    </view>
+    <image src="../../image/cooperation.png" />
+  </navigator>
+  <navigator url="">
+    <view>
+      <text>本周值得买</text>
+      <text>单价1万1起</text>
+    </view>
+    <image src="../../image/cooperation.png" />
+  </navigator>
+  <navigator url="">
+    <view>
+      <text>本周值得买</text>
+      <text>单价1万1起</text>
+    </view>
+    <image src="../../image/cooperation.png" />
+  </navigator>
+  <navigator url="">
+    <view>
+      <text>本周值得买</text>
+      <text>单价1万1起</text>
+    </view>
+    <image src="../../image/cooperation.png" />
+  </navigator>
+</view>
+
+<!-- banner2 -->
+<view class="swiperContainer">
+  <swiper class="swiper2" bindchange="swiperChangeb" indicator-dots="{{indicatorDotsa}}" autoplay="{{autoplaya}}" circular="true" duration="{{durationa}}">
+    <block wx:for="{{imgUrlsa}}" wx:key="id">
       <swiper-item wx:key="id">
-        <image src="{{item}}" class="slide-image" bindtap="listenerButtonPreviewImage" data-index="{{index}}" class='img'  />
+        <image src="{{item}}" class="slide-imagea" bindtap="listenerButtonPreviewImagea" data-index="{{index}}" class='img'  />
       </swiper-item>
     </block>
   </swiper>
-  <!-- 菜单 -->
-  <view class="menu">
-    <navigator url="/pages/building/building">
-      <image src="../../image/croom.png" />
-      <text>新房</text>
-    </navigator>
-    <navigator url="/pages/NewDish/NewDish">
-      <image src="../../image/cshops.png" />
-      <text>商铺</text>
-    </navigator>
-    <navigator url="">
-      <image src="../../image/clive.png" />
-      <text>直播</text>
-    </navigator>
-    <navigator url="/pages/map/map">
-      <image src="../../image/clooking.png" />
-      <text>地图找房</text>
-    </navigator>
-    <navigator url="">
-      <image src="../../image/cwallet.png" />
-      <text>返金卡</text>
-    </navigator>
-    <navigator url="">
-      <image src="../../image/cpreferential.png" />
-      <text>购房惠</text>
-    </navigator>
-    <navigator url="">
-      <image src="../../image/cooperation.png" />
-      <text>call房圈</text>
-    </navigator>
-    <navigator url="">
-      <image src="../../image/cweixin.png" />
-      <text>官方微信</text>
-    </navigator>
-  </view>
-  <!-- 推荐 -->
-  <view class="nows">
-    <navigator url="">
-      <view>
-        <text>本周值得买</text>
-        <text>单价1万1起</text>
-      </view>
-      <image src="../../image/cooperation.png" />
-    </navigator>
-    <navigator url="">
-      <view>
-        <text>本周值得买</text>
-        <text>单价1万1起</text>
-      </view>
-      <image src="../../image/cooperation.png" />
-    </navigator>
-    <navigator url="">
-      <view>
-        <text>本周值得买</text>
-        <text>单价1万1起</text>
-      </view>
-      <image src="../../image/cooperation.png" />
-    </navigator>
-    <navigator url="">
-      <view>
-        <text>本周值得买</text>
-        <text>单价1万1起</text>
-      </view>
-      <image src="../../image/cooperation.png" />
-    </navigator>
-  </view>
+  <view class="imageCountb">{{currentb+1}}/{{imgUrlsa.length}}</view>
+</view>
 
-  <view class="swiperContainer">
-    <swiper class="swiper2" bindchange="swiperChangeb" indicator-dots="{{indicatorDotsa}}" autoplay="{{autoplaya}}" circular="true" duration="{{durationa}}">
-      <block wx:for="{{imgUrlsa}}" wx:key="id">
-        <swiper-item wx:key="id">
-          <image src="{{item}}" class="slide-imagea" bindtap="listenerButtonPreviewImagea" data-index="{{index}}" class='img'  />
-        </swiper-item>
-      </block>
-    </swiper>
-    <view class="imageCountb">{{currentb+1}}/{{imgUrlsa.length}}</view>
-  </view>
-
-
-  <view class="swiper-tabc">  
-      <view class="swiper-tab-list {{currentTabc==0 ? 'onc' : ''}}" data-current="0" bindtap="swichNav">
-        <text>行业资讯</text>
-        <view></view>
-      </view>  
-      <view class="swiper-tab-list {{currentTabc==1 ? 'onc' : ''}}" data-current="1" bindtap="swichNav">
-        <text>地产快讯</text>
-        <view></view>
-      </view>  
-      <view class="swiper-tab-list {{currentTabc==2 ? 'onc' : ''}}" data-current="2" bindtap="swichNav">
-        <text>最新优惠</text>
-        <view></view>
-      </view>
-  </view> 
-
-  <swiper class="swiper3" current="{{currentTabc}}" duration="300" bindchange="swiperChangec">
-      <swiper-item class="information">
-        <navigator class="swch" wx:for="{{consulting}}" wx:key="id">
-          <view>
-            <view>{{index+1}}{{item.title}}</view>
-            <view>{{item.time}}</view>
-          </view>
-          <image src="{{item.img}}" />
-        </navigator>
-      </swiper-item>
-      <swiper-item class="alerts">
-        <navigator class="swch" wx:for="{{consulting}}" wx:key="id">
-          <view>
-            <view>{{index+1}}{{item.title}}</view>
-            <view>{{item.time}}</view>
-          </view>
-          <image src="{{item.img}}" />
-        </navigator>
-      </swiper-item>
-      <swiper-item class="preferential">
-        <navigator url="" wx:for="{{preferential}}" wx:key="id">
-          <view>{{index+1}}---{{item}}</view>
-          <view>
-            <text>07-21</text>
-            <text class="iconfont icon-qianjin"></text>
-          </view>
-        </navigator>
-      </swiper-item>  
-  </swiper>
-
-  <view class="btn">
-    <view>
-      <text>换一换</text>
-      <text class="iconfont icon-shuaxin1"></text>
+<view class="swiper-tabc">  
+    <view class="swiper-tab-list {{currentTabc==0 ? 'onc' : ''}}" data-current="0" bindtap="swichNav">
+      <text>行业资讯</text>
+      <view></view>
     </view>
-    <view>
-      <text>查看更多</text>
-      <text class="iconfont icon-qianjin"></text>
+    <view class="swiper-tab-list {{currentTabc==1 ? 'onc' : ''}}" data-current="1" bindtap="swichNav">
+      <text>地产快讯</text>
+      <view></view>
+    </view>  
+    <view class="swiper-tab-list {{currentTabc==2 ? 'onc' : ''}}" data-current="2" bindtap="swichNav">
+      <text>最新优惠</text>
+      <view></view>
     </view>
-  </view>
-
-
-  <view class="swiper-tabd">  
-      <view class="swiper-tab-list {{currentTabd==0 ? 'onc' : ''}}" data-current="0" bindtap="swichNavd">
-        <text>推荐</text>
-        <view></view>
-      </view>  
-      <view class="swiper-tab-list {{currentTabd==1 ? 'onc' : ''}}" data-current="1" bindtap="swichNavd">
-        <text>新房</text>
-        <view></view>
-      </view>
-      <view class="swiper-tab-list {{currentTabd==2 ? 'onc' : ''}}" data-current="2" bindtap="swichNavd">
-        <text>品质房</text>
-        <view></view>
-      </view>
-      <view class="swiper-tab-list {{currentTabd==3 ? 'onc' : ''}}" data-current="3" bindtap="swichNavd">
-        <text>经济房</text>
-        <view></view>
-      </view>
-      <view class="swiper-tab-list {{currentTabd==4 ? 'onc' : ''}}" data-current="4" bindtap="swichNavd">
-        <text>优惠房</text>
-        <view></view>
-      </view>
-  </view> 
-
-  <swiper class="swiper4" current="{{currentTabd}}" duration="300" bindchange="swiperChanged">
-      <swiper-item class="recommended" tapsd="onReachBottom">
-        <scroll-view scroll-y="true" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
-          <scroll-view class="scrollb" scroll-x="true">
-            <view class="scroll_childb">
-              <image src="../../image/carda.png" />
-              <view>高绿化率</view>
-              <view>绿化覆盖 空气清晰</view>
-            </view>
-            <view class="scroll_childb">
-              <image src="../../image/carda.png" />
-              <view>高绿化率</view>
-              <view>绿化覆盖 空气清晰</view>
-            </view>
-            <view class="scroll_childb">
-              <image src="../../image/carda.png" />
-              <view>高绿化率</view>
-              <view>绿化覆盖 空气清晰</view>
-            </view>
-            <view class="scroll_childb">
-              <image src="../../image/carda.png" />
-              <view>高绿化率</view>
-              <view>绿化覆盖 空气清晰</view>
-            </view>
-          </scroll-view>
-
-          <view class="list">
-            <navigator class="lists" url="" wx:for="{{numa}}" wx:key="id">
-              <image src="../../image/carda.png" />
-              <view>
-                <view>{{index+1}}名稱</view>
-                <view class="region">
-                  <view>郑东新区 郑东新区</view>
-                  <view>建面107-400㎡</view>
-                </view>
-                <view class="features">
-                  <view class="statea">在售</view>
-                  <view>南北通透</view>
-                  <view>配套成熟</view>
-                </view>
-                <view>售价待定</view>
-              </view>
-            </navigator>
-          </view>
-        </scroll-view>
-      </swiper-item>
-      <swiper-item class="news {{over==true?'over':''}}">
-        <scroll-view class="scrollb" scroll-x="true">
-          <view class="scroll_childb">
-            <image src="../../image/carda.png" />
-            <view>高绿化率</view>
-            <view>绿化覆盖 空气清晰</view>
-          </view>
-          <view class="scroll_childb">
-            <image src="../../image/carda.png" />
-            <view>高绿化率</view>
-            <view>绿化覆盖 空气清晰</view>
-          </view>
-          <view class="scroll_childb">
-            <image src="../../image/carda.png" />
-            <view>高绿化率</view>
-            <view>绿化覆盖 空气清晰</view>
-          </view>
-          <view class="scroll_childb">
-            <image src="../../image/carda.png" />
-            <view>高绿化率</view>
-            <view>绿化覆盖 空气清晰</view>
-          </view>
-        </scroll-view>
-
-        <view class="list">
-          <navigator class="lists" url="" wx:for="{{numa}}" wx:key="id">
-            <image src="../../image/carda.png" />
-            <view>
-              <view>{{index+1}}名稱</view>
-              <view class="region">
-                <view>郑东新区 郑东新区</view>
-                <view>建面107-400㎡</view>
-              </view>
-              <view class="features">
-                <view class="statea">在售</view>
-                <view>南北通透</view>
-                <view>配套成熟</view>
-              </view>
-              <view>售价待定</view>
-            </view>
-          </navigator>
+</view> 
+<swiper class="swiper3" current="{{currentTabc}}" duration="300" bindchange="swiperChangec">
+    <swiper-item class="information">
+      <navigator class="swch" wx:for="{{consulting}}" wx:key="id">
+        <view>
+          <view>{{index+1}}{{item.title}}</view>
+          <view>{{item.time}}</view>
         </view>
-      </swiper-item>
-      <swiper-item class="quality">
-        品质房
-      </swiper-item>
-      <swiper-item class="economic">
-        经济房
-      </swiper-item>
-      <swiper-item class="prefs">
-        优惠房
-      </swiper-item>
-  </swiper>
+        <image src="{{item.img}}" />
+      </navigator>
+    </swiper-item>
+    <swiper-item class="alerts">
+      <navigator class="swch" wx:for="{{consulting}}" wx:key="id">
+        <view>
+          <view>{{index+1}}{{item.title}}</view>
+          <view>{{item.time}}</view>
+        </view>
+        <image src="{{item.img}}" />
+      </navigator>
+    </swiper-item>
+    <swiper-item class="preferential">
+      <navigator url="" wx:for="{{preferential}}" wx:key="id">
+        <view>{{index+1}}---{{item}}</view>
+        <view>
+          <text>07-21</text>
+          <text class="iconfont icon-qianjin"></text>
+        </view>
+      </navigator>
+    </swiper-item>  
+</swiper>
+<!-- 刷新 -->
+<view class="btn">
+  <view>
+    <text>换一换</text>
+    <text class="iconfont icon-shuaxin1"></text>
+  </view>
+  <view>
+    <text>查看更多</text>
+    <text class="iconfont icon-qianjin"></text>
+  </view>
+</view>
 
-</scroll-view>
+<view class="swi_box">  
+  <view class="swiper-tabd {{topk==true?'topk':''}}">
+    <view class="swiper-tab-list {{currentTabd==0 ? 'onc' : ''}}" data-current="0" bindtap="swichNavd">
+      <text>推荐</text>
+      <view></view>
+    </view>  
+    <view class="swiper-tab-list {{currentTabd==1 ? 'onc' : ''}}" data-current="1" bindtap="swichNavd">
+      <text>新房</text>
+      <view></view>
+    </view>
+    <view class="swiper-tab-list {{currentTabd==2 ? 'onc' : ''}}" data-current="2" bindtap="swichNavd">
+      <text>品质房</text>
+      <view></view>
+    </view>
+    <view class="swiper-tab-list {{currentTabd==3 ? 'onc' : ''}}" data-current="3" bindtap="swichNavd">
+      <text>经济房</text>
+      <view></view>
+    </view>
+    <view class="swiper-tab-list {{currentTabd==4 ? 'onc' : ''}}" data-current="4" bindtap="swichNavd">
+      <text>优惠房</text>
+      <view></view>
+    </view>
+  </view>
+</view>
 
+<view class="boxm">
+  <scroll-view scroll-y="true" bindscrolltolower="DownLoad1" bindscroll="scroll" bindscrolltoupper="refresh">
+    <scroll-view class="scrollb" scroll-x="true">
+      <view class="scroll_childb">
+        <image src="../../image/carda.png" />
+        <view>高绿化率</view>
+        <view>绿化覆盖 空气清晰</view>
+      </view>
+      <view class="scroll_childb">
+        <image src="../../image/carda.png" />
+        <view>高绿化率</view>
+        <view>绿化覆盖 空气清晰</view>
+      </view>
+      <view class="scroll_childb">
+        <image src="../../image/carda.png" />
+        <view>高绿化率</view>
+        <view>绿化覆盖 空气清晰</view>
+      </view>
+      <view class="scroll_childb">
+        <image src="../../image/carda.png" />
+        <view>高绿化率</view>
+        <view>绿化覆盖 空气清晰</view>
+      </view>
+    </scroll-view>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <view class="list">
+      <navigator class="lists" url="" wx:for="{{numa}}" wx:key="id">
+        <image src="../../image/carda.png" />
+        <view>
+          <view>{{currentTabd}}名稱{{index+1}}</view>
+          <view class="region">
+            <view>郑东新区 郑东新区</view>
+            <view>建面107-400㎡</view>
+          </view>
+          <view class="features">
+            <view class="statea">在售</view>
+            <view>南北通透</view>
+            <view>配套成熟</view>
+          </view>
+          <view>售价待定</view>
+        </view>
+      </navigator>
+    </view>
+  </scroll-view>
+</view>

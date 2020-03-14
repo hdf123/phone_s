@@ -1,11 +1,10 @@
-// pages/home/home.js
+// pages/homea/homea.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    statea:false,
     indicatorDots: true,
     indicatorDotsa: false,
     duration: 500,//幻灯片切换时长
@@ -13,10 +12,11 @@ Page({
     autoplay: false,//自动播放
     autoplaya: false,//自动播放
     currentb: 0,//显示轮播位置
-    currentTabc: 0,
+    currentTabc: 0,//轮播3
     currentTabd: 0,
-    numa:10,
-    over:true,//控制滚动显示
+    numa: 10,
+    heis: 0,//定位距离的高度
+    topk: false,
     imgUrls: [//轮播
       '../../image/home_banner.png',
       '../../image/home_banner.png',
@@ -36,11 +36,11 @@ Page({
     }, {
       title: "强房企年内拿地3511亿，海外融资同比翻倍",
       time: "2018年5月9日",
-        img: "../../image/carda.png"
+      img: "../../image/carda.png"
     }, {
       title: "强房企年内拿地3512亿，海外融资同比翻倍",
       time: "2018年5月9日",
-        img: "../../image/carda.png"
+      img: "../../image/carda.png"
     }, {
       title: "强房企年内拿地3513亿，海外融资同比翻倍",
       time: "2018年5月9日",
@@ -62,55 +62,25 @@ Page({
       "正弘形城1号院洋房在售一号院高层优惠升级中",
     ]
   },
-/**
- * 滚动
- */
-  DownLoad1: function () {
-    console.log('到底了-----------------------------------------');
+  // 监听页面滚动的距离
+  onPageScroll: function (e) {
     var _this = this;
-    if (_this.data.trua) {
-      _this.popMaskTest();
-      _this.setData({ trua: false });
-      setTimeout(function (){
-        _this.setData({
-          numa: _this.data.numa + 20,
-          trua: true,
-        });
-      }, 2000);
+    console.log(e.scrollTop)
+    if (e.scrollTop >= _this.data.heis) {
+      console.log("定位");
+      _this.setData({
+        topk: true
+      })
+    } else {
+      console.log("取消定位");
+      _this.setData({
+        topk: false
+      })
     }
   },
-  scroll: function (event) {
-    var _this=this;
-    wx.createSelectorQuery().select('.swiper-tabd').boundingClientRect(function (rect) {
-      rect.id      // 节点的ID
-      rect.dataset // 节点的dataset
-      rect.left    // 节点的左边界坐标
-      rect.right   // 节点的右边界坐标
-      rect.top     // 节点的上边界坐标
-      rect.bottom  // 节点的下边界坐标
-      rect.width   // 节点的宽度
-      rect.height  // 节点的高度
-      var tops = rect.top;
-      console.log(tops);
-      if (tops<100){
-        console.log("固定");
-        _this.setData({
-          over:true
-        })
-      }else{
-        console.log("不固定");
-        _this.setData({
-          over:false
-        })
-      }
-    }).exec()
-  },
-  refresh: function (event) {
-    console.log("到顶了---");
-  },
-/**
- * 轮播2
- */
+  /**
+   * 轮播2
+   */
   swiperChangeb: function (e) {
     var that = this;
     console.log(e);
@@ -120,9 +90,9 @@ Page({
       })
     }
   },
-/**
- * 轮播3
- */
+  /**
+   * 轮播3
+   */
   swichNav: function (e) {
     var that = this;
     if (this.data.currentTabc === e.currentTarget.dataset.current) {
@@ -138,36 +108,41 @@ Page({
     var that = this;
     that.setData({ currentTabc: e.detail.current });
   },
-/**
- * 轮播4
- */
+  /**
+   * 轮播4
+   */
   swichNavd: function (e) {
-    var that = this;
-    if (this.data.currentTabd === e.currentTarget.dataset.current) {
-      return false;
-    } else {
-      that.setData({
-        currentTabd: e.currentTarget.dataset.current
-      })
-    }
-    console.log(e.currentTarget.dataset.current);
-  },
-  swiperChanged: function (e) {
-    var that = this;
-    that.setData({ currentTabd: e.detail.current });
+    var _this = this;
+    this.setData({
+      currentTabd: e.currentTarget.dataset.current
+    })
+    wx.pageScrollTo({
+      scrollTop: _this.data.heis
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.animation = wx.createAnimation()
+    var _this = this, heis = '';
+    wx.createSelectorQuery().select('.headers').boundingClientRect(function (rect) {
+      heis = rect.height;
+      console.log("顶部高度----" + heis);
+    }).exec()
+    wx.createSelectorQuery().select('.swiper-tabd').boundingClientRect(function (rect) {
+      console.log(rect.top);
+      _this.setData({
+        heis: rect.top - heis
+      })
+      console.log(_this.data.heis);
+    }).exec()
   },
 
   /**
@@ -202,7 +177,17 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log(123);
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 1000)
+
+    this.setData({
+      numa: this.data.numa + 1
+    })
   },
 
   /**

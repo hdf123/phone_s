@@ -12,8 +12,8 @@ Page({
     autoplay: false,//自动播放
     autoplaya: false,//自动播放
     currentb: 0,//显示轮播位置
-    currentTabc: 0,
-    currentTabd: 0,
+    currentTabc: 0,//轮播3
+    currentTabd:0,
     numa: 10,
     heis:0,//定位距离的高度
     topk:false,
@@ -111,20 +111,14 @@ Page({
   /**
    * 轮播4
    */
-  swichNavd: function (e) {
-    var that = this;
-    if (this.data.currentTabd === e.currentTarget.dataset.current) {
-      return false;
-    } else {
-      that.setData({
-        currentTabd: e.currentTarget.dataset.current
-      })
-    }
-    console.log(e.currentTarget.dataset.current);
-  },
-  swiperChanged: function (e) {
-    var that = this;
-    that.setData({ currentTabd: e.detail.current });
+  swichNavd: function (e){
+    var _this=this;
+    this.setData({
+      currentTabd: e.currentTarget.dataset.current
+    })
+    wx.pageScrollTo({
+      scrollTop: _this.data.heis
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -183,7 +177,17 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 1000)
 
+    this.setData({
+      numa: this.data.numa + 1
+    })
   },
 
   /**
