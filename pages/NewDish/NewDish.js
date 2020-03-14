@@ -16,8 +16,10 @@ Page({
     featuresk:'',//楼盘特色
     SalesStatus:'',//销售状态
     trus: true,//加载状态
+    topk:false,
+    heis:'',
     nums:0,
-    arr1: [{ value: '不限',checked: true}, { value: '金水区' }, { value: '二七区' }, { value: '中原区' },
+    arr1: [{ value: '不限',checked: true},{ value: '金水区' }, { value: '二七区' }, { value: '中原区' },
       { value: '郑东新区' }, { value: '管城区' }, { value: '惠济区' }
     ],
     arr2: [{ value: '不限',checked: true}, { value: '8000元/㎡以下' }, { value: '8000-10000元/㎡' },
@@ -135,7 +137,10 @@ Page({
    */
   swichNav: function (e){
     var _this = this;
-    this.setData({ state: true })
+    this.setData({
+      state: true,
+      topk:true
+    })
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
@@ -143,6 +148,9 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
+    wx.pageScrollTo({
+      scrollTop: _this.data.heis
+    })
     return;
   },
   // 选择
@@ -312,7 +320,6 @@ Page({
     console.log("状态：" + this.data.SalesStatus);
   },
   btn() {
-    console.log(1);
     this.setData({
       state: false
     })
@@ -395,7 +402,7 @@ Page({
       //如果有透明蒙层，弹窗的期间不能点击文档内容 
     })
   },
-  scroll: function (event) {
+  scrollk: function (event) {
     var _this=this;
     wx.createSelectorQuery().select('.box').boundingClientRect(function (rect) {
       rect.id      // 节点的ID
@@ -408,19 +415,23 @@ Page({
       rect.height  // 节点的高度
       var tops = rect.top;
       console.log(tops);
-      
-      if (tops<100){
-        console.log("固定");
-        _this.setData({
-          over:true
-        })
-      }else{
-        console.log("不固定");
-        _this.setData({
-          over:false
-        })
-      }
     }).exec()
+  },
+  // 监听页面滚动的距离
+  onPageScroll: function (e) {
+    var _this = this;
+    console.log(e.scrollTop)
+    if (e.scrollTop >= _this.data.heis) {
+      console.log("定位");
+      _this.setData({
+        topk: true
+      })
+    } else {
+      console.log("取消定位");
+      _this.setData({
+        topk: false
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载
@@ -443,7 +454,18 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var _this = this, heis = '';
+    wx.createSelectorQuery().select('.headers').boundingClientRect(function (rect) {
+      heis = rect.height;
+      console.log("顶部高度----" + heis);
+    }).exec()
+    wx.createSelectorQuery().select('.box').boundingClientRect(function (rect) {
+      console.log(rect.top);
+      _this.setData({
+        heis: rect.top - heis
+      })
+      console.log(_this.data.heis);
+    }).exec()
   },
 
   /**

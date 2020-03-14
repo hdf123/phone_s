@@ -8,8 +8,9 @@
     <image src="../../image/xinxi.png" />
   </view>
 </view>
+
 <!-- 内容 -->
-<scroll-view class="contents" scroll-y="true" bindscroll="scroll">
+<view class="contents">
   <view class="menu">
     <navigator url="">
       <image src="../../image/menu01.png" />
@@ -75,19 +76,17 @@
   </view>
   <view class="tit">全部楼盘</view>
 
-
+<!-- 定位栏 -->
   <view class="box">
     <!-- 选择 -->
-    <view class="swiper-tab">
+    <view class="swiper-tab {{topk==true?'topk':''}}">
         <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap="swichNav">
           区域<view class="triangle {{currentTab==0 ? 'triangles' : ''}}"></view>
         </view>  
         <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" catchtap="swichNav">
           价格<view class="triangle {{currentTab==1 ? 'triangles' : ''}}"></view>
         </view>  
-        <view class=
-        
-        "swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">
+        <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">
           户型<view class="triangle {{currentTab==2 ? 'triangles' : ''}}"></view>
         </view>  
         <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">
@@ -206,43 +205,36 @@
   </view>
 
 
-<!-- 楼盘 -->
-<scroll-view class="scrollk_box" scroll-y="true" bindscrolltolower="bindDownLoad">
-  <block wx:for="{{arrp}}" wx:key="id">
-    <navigator url='../buildings/buildings?name={{item.name}}&arr={{item.address}}&state={{item.state}}&ars={{item.features}}'>
-      <view class="building_box">
-        <image class="images" src='../../image/carda.png' mode='widthFix' />
-        <view class="buildings">
-          <view class="building_state">
-            <view>{{(index+1)+item.name}}</view>
-            <view class="{{item.state=='在售'?'b_statea':''}}" wx:if="{{item.state=='在售'}}">{{item.state}}</view>
-            <view class="{{item.state=='待售'?'b_stateb':''}}" wx:elif="{{item.state=='待售'}}">{{item.state}}</view>
-            <view class="{{item.state=='售罄'?'b_statec':''}}" wx:else>{{item.state}}</view>
-          </view>
-          <view class="building_address">
-            <block wx:for="{{item.address}}" wx:for-item="keys" wx:key="id">
-              <view>{{keys}}</view>
-            </block>
-          </view>
-          <view class="building_features">
-            <block wx:for="{{item.features}}" wx:for-item="keyg" wx:key="id">
-              <view>{{keyg}}</view>
-            </block>
-          </view>
-          <view class="building_area">
-            <view>{{item.ak}}</view>
-            <view>{{item.bk}}</view>
+  <!-- 楼盘 -->
+  <scroll-view class="scrollk_box" scroll-y="true" bindscrolltolower="bindDownLoad">
+    <block wx:for="{{arrp}}" wx:key="id">
+      <navigator url='../buildings/buildings?name={{item.name}}&arr={{item.address}}&state={{item.state}}&ars={{item.features}}'>
+        <view class="building_box">
+          <image class="images" src='../../image/carda.png' mode='widthFix' />
+          <view class="buildings">
+            <view class="building_state">
+              <view>{{(index+1)+item.name}}</view>
+              <view class="{{item.state=='在售'?'b_statea':''}}" wx:if="{{item.state=='在售'}}">{{item.state}}</view>
+              <view class="{{item.state=='待售'?'b_stateb':''}}" wx:elif="{{item.state=='待售'}}">{{item.state}}</view>
+              <view class="{{item.state=='售罄'?'b_statec':''}}" wx:else>{{item.state}}</view>
+            </view>
+            <view class="building_address">
+              <block wx:for="{{item.address}}" wx:for-item="keys" wx:key="id">
+                <view>{{keys}}</view>
+              </block>
+            </view>
+            <view class="building_features">
+              <block wx:for="{{item.features}}" wx:for-item="keyg" wx:key="id">
+                <view>{{keyg}}</view>
+              </block>
+            </view>
+            <view class="building_area">
+              <view>{{item.ak}}</view>
+              <view>{{item.bk}}</view>
+            </view>
           </view>
         </view>
-      </view>
-    </navigator>
-  </block>
-</scroll-view>
-
-
-
-
-
-
-
-</scroll-view>
+      </navigator>
+    </block>
+  </scroll-view>
+</view>
