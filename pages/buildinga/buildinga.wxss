@@ -1,72 +1,3 @@
-/* head */
-.headers{
-  height:88rpx;
-  display:flex;
-  justify-content: space-between;
-}
-.headers>view{
-  width:88rpx;
-  height:88rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.headersk{
-  width:100%;
-  position: fixed;
-  top:0;
-  opacity:0;
-  z-index:1;
-  background:white;
-}
-.headersk>view:nth-child(1){
-  height:88rpx;
-  position: relative;
-}
-.headersk .icon-Fill,.headersk .icon-fenxiang{
-  width:88rpx;
-  height:100%;
-  position: absolute;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.headersk .icon-Fill{
-  left: 0;
-}
-.headersk .conters{
-  height:100%;
-  font-size: 36rpx;
-  text-align: center;
-  line-height:88rpx;
-}
-.headersk .icon-fenxiang{
-  right: 0;
-}
-.mortgage_tab{
-  display: flex;
-  background:white;
-  position: relative;
-}
-.mortgage_tab>view{
-  width:100%;
-  height:88rpx;
-  color: #666666;
-  font-size: 30rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.mortgage_tab>text{
-  display: inline-block;
-  position: absolute;
-  left:8.5%;
-  bottom:12rpx;
-  width:8%;
-  border-bottom:3rpx solid #5facfb;
-}
 .swiper1{
   height: 544rpx;
 }
@@ -90,15 +21,6 @@
   right:14rpx;
   bottom:76rpx;
 }
-
-
-
-
-
-
-
-
-
 /* 详情 */
 .details_box{
   box-sizing:border-box;

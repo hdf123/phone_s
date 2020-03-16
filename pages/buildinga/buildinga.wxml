@@ -1,25 +1,3 @@
-<!-- <view class="headers" animation="{{slide_up1}}"> -->
-<view class="headers" hidden="{{hids}}" animation="{{slide_up1}}">
-  <view class="iconfont icon-Fill"></view>
-  <view class="iconfont icon-fenxiang share"></view>
-</view>
-
-<!-- <view class="headersk" animation="{{slide_up2}}"> -->
-<view class="headersk" hidden="{{!hids}}" animation="{{slide_up2}}">
-  <view>
-    <view class="iconfont icon-Fill"></view>
-    <view class="conters">阳光城丽景公馆</view>
-    <view class="iconfont icon-fenxiang share"></view>
-  </view>
-  <view class="mortgage_tab">
-    <view bindtap="taba" data-index="0">基础信息</view>
-    <view bindtap="taba" data-index="1">户型</view>
-    <view bindtap="taba" data-index="2">周边</view>
-    <view bindtap="taba" data-index="3">点评</view>
-    <text style="left:{{kks}}%" animation="{{moveData}}"></text>
-  </view>
-</view>
-
 <view class="swiperContainer">
   <swiper class="swiper1" bindchange="swiperChange" autoplay="{{autoplay}}" circular="true" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="id">
@@ -100,6 +78,9 @@
     <image src='../../image/Back.png' mode='widthFix' />
   </view>
 </navigator>
+
+
+<!-- 户型展示 -->
 <view class="door_box">
   <block wx:for="{{door}}" wx:key="id">
     <navigator class="door_child" url="../preview/preview?arr={{item.area}}&muns={{item.many}}">

@@ -1,19 +1,13 @@
 // pages/buildings/buildings.js
-var app = getApp();
 Page({
   /**
    * 页面的初始数据
    */
   data: {
     longitude: 113.62493,
-    latitude:34.74725,
-    tabIndex:0,//taba初始位置
-    widthScreen: null,
-    kks:'8.5',
-    heis:0,
-    hids:false,
+    latitude: 34.74725,
     markers: [{
-      latitude:34.74725,
+      latitude: 34.74725,
       longitude: 113.62493,
       name: '标记位置'
     }],
@@ -26,18 +20,18 @@ Page({
       'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2320573b3be643e29f5270a97e1a9c1d.jpg?thumb=1&w=720&h=360'
     ],
     msgList: [//最新动态
-      {url: "url", title: "12月进入龙华时刻，万科压轴大盘将开盘，5.88万 /㎡起钜惠登场！" },
+      { url: "url", title: "12月进入龙华时刻，万科压轴大盘将开盘，5.88万 /㎡起钜惠登场！" },
       { url: "url", title: "李先生已通过返金卡成功找到优惠 1分钟前---李先生已通过返金卡成功找到优惠 1分钟前李先生已通过返金卡成功找到优惠 1分钟前" },
       { url: "url", title: "你想和一群有志青年一起过生日嘛？" }
     ],
-    door:[{//户型
+    door: [{//户型
       url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/b51889744910df7979a2f672434da84e.jpg?thumb=1&w=720&h=360',
       name: "5室2厅2卫",
       state: "在售",
       area: ["建面117.4㎡", "朝向南"],
       features: ["南北通透", "景观阳台"],
       many: "价格待定"
-    },{
+    }, {
       url: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/37dfdc929ee9a4313facb0b23ebcd721.jpg?thumb=1&w=720&h=360',
       name: "6室3厅2卫",
       state: "待售",
@@ -63,51 +57,7 @@ Page({
       picture: []//评价图片
     }]
   },
-// head
-  taba:function(e){
-    var _this=this;
-    var tabIndex=e.target.dataset.index;
-    this.setData({
-      kks: 8.5 + (100 / 4 * tabIndex)
-    })
-    if (tabIndex==0){
-      wx.pageScrollTo({
-        scrollTop:0
-      })
-    } else if (tabIndex == 1){
-      wx.pageScrollTo({
-        scrollTop:440
-      })
-    } else if (tabIndex == 2){
-      wx.pageScrollTo({
-        scrollTop:620
-      })
-    } else if (tabIndex == 3){
-      wx.pageScrollTo({
-        scrollTop:992
-      })
-    }
-  },
-  // 监听页面滚动的距离
-  onPageScroll: function (e){
-    var _this = this;
-    var opacitys = 1 - e.scrollTop/100;
-    app.show(this, 'slide_up1',100, opacitys)
-    // console.log(e.scrollTop);
-    if (e.scrollTop>100){
-      _this.setData({
-        hids:true
-      })
-      app.show(this, 'slide_up2', 100, (e.scrollTop -100) /150);
-    } else if (e.scrollTop < 100){
-      _this.setData({
-        hids:false
-      })
-      app.show(this, 'slide_up2', 100,0);
-      app.show(this, 'slide_up1', 100, opacitys);
-    }
-  },
-  swiperChange: function(e){
+  swiperChange: function (e) {
     var that = this;
     console.log(e);
     if (e.detail.source == 'touch') {
@@ -166,21 +116,17 @@ Page({
   /**
    * 查看更多户型
    */
-  building(){
+  building() {
     wx.navigateTo({
-      url: '../model/model?name=' + this.data.names + '&arr='+this.data.arrs
+      url: '../model/model?name=' + this.data.names + '&arr=' + this.data.arrs
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var arr = options.arr.split(",");
-    // var ars = options.ars.split(",");
-    var arr = ["住宅", "管城回族区", "管南区域"];
-    var ars = ["小户型", "车位充足", "绿化率高"];
-    console.log(arr);
-    console.log(ars);
+    var arr = options.arr.split(",");
+    var ars = options.ars.split(",");
     this.setData({
       names: options.name,
       arrs: arr,

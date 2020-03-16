@@ -52,6 +52,12 @@
 					"pathName": "pages/NewDish/NewDish",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/buildings/buildings",
+					"pathName": "pages/buildings/buildings",
+					"scene": null
 				}
 			]
 		}

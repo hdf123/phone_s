@@ -1,0 +1,12 @@
+<!-- <view class="ani" animation="{{moveData}}" bindtap='moveClick'>移动</view> -->
+<view class="mortgage_tab">
+  <view bindtap="taba" data-index="0">基础信息</view>
+  <view bindtap="taba" data-index="1">户型</view>
+  <view bindtap="taba" data-index="2">周边</view>
+  <view bindtap="taba" data-index="3">点评</view>
+  <text animation="{{moveData}}"></text>
+</view>
+
+<view class="boxa" animation="{{hidepic}}" bindtap="boxa">111</view>
+<view class="boxa boxb" bindtap="boxb" animation="{{slide_up1}}">222</view>
+<view class="boxc">444</view>

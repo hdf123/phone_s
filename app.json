@@ -1,11 +1,13 @@
 {
   "pages": [
+    "pages/test/test",
     "pages/home/home",
     "pages/homea/homea",
     "pages/search/search",
     "pages/NewDish/NewDish",
     "pages/building/building",
     "pages/buildings/buildings",
+    "pages/buildinga/buildinga",
     "pages/map/map"
   ],
   "window": {

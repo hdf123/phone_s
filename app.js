@@ -33,7 +33,24 @@ App({
       }
     })
   },
+  //渐入，渐出实现 
+  show: function (that, param, times, opacity) {
+    var animation = wx.createAnimation({
+      //持续时间800ms
+      duration: 800,
+      timingFunction: 'ease',
+    });
+    //var animation = this.animation
+    animation.opacity(opacity).step({ duration: times })
+    //将param转换为key
+    var json = '{"' + param + '":""}'
+    json = JSON.parse(json);
+    json[param] = animation.export()
+    //设置动画
+    that.setData(json)
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    ks:12
   }
 })

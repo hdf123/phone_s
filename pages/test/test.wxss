@@ -1,0 +1,43 @@
+.mortgage_tab{
+  display: flex;
+  background:white;
+  position: relative;
+}
+.mortgage_tab>view{
+  width:100%;
+  height:88rpx;
+  color: #666666;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mortgage_tab>text{
+  display: inline-block;
+  position: absolute;
+  left:8.5%;
+  bottom:12rpx;
+  width:8%;
+  border-bottom:3rpx solid #5facfb;
+}
+
+/* 淡入淡出 */
+.boxa,.boxb{
+  width:200rpx;
+  height:200rpx;
+  background:red;
+}
+.boxc{
+  width:100%;
+  height:1000rpx;
+}
+
+
+
+
+
+
+
+
+
+
