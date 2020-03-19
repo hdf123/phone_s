@@ -1,2 +1,2 @@
-<map id="myMap" style="width: {{mapWidth}}rpx; height: {{mapHeight}}rpx;" scale="{{scales}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" show-location include-points="{{markers}}" bindtap="bdt" bindlabeltap="toaddress" bindmarkertap="toaddress" bindcallouttap="callout"></map>
+<map id="myMap" scale="{{scales}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" show-location include-points="{{markers}}" bindtap="bdt" bindlabeltap="toaddress" bindmarkertap="toaddress" bindcallouttap="callout"></map>
 

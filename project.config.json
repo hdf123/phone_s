@@ -48,15 +48,9 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/NewDish/NewDish",
-					"pathName": "pages/NewDish/NewDish",
+					"name": "pages/map/map",
+					"pathName": "pages/map/map",
 					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/buildings/buildings",
-					"pathName": "pages/buildings/buildings",
 					"scene": null
 				}
 			]

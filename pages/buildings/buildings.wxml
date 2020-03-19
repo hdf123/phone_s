@@ -1,10 +1,8 @@
-<!-- <view class="headers" animation="{{slide_up1}}"> -->
 <view class="headers" hidden="{{hids}}" animation="{{slide_up1}}">
   <view class="iconfont icon-Fill"></view>
   <view class="iconfont icon-fenxiang share"></view>
 </view>
 
-<!-- <view class="headersk" animation="{{slide_up2}}"> -->
 <view class="headersk" hidden="{{!hids}}" animation="{{slide_up2}}">
   <view>
     <view class="iconfont icon-Fill"></view>

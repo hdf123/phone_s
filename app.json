@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/test/test",
     "pages/home/home",
     "pages/homea/homea",
     "pages/search/search",
@@ -8,6 +7,7 @@
     "pages/building/building",
     "pages/buildings/buildings",
     "pages/buildinga/buildinga",
+    "pages/test/test",
     "pages/map/map"
   ],
   "window": {

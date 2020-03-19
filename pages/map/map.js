@@ -6,7 +6,7 @@ Page({
     scales:12,
     latitude: 24.4795100000,
     longitude: 118.0894800000,
-    ad:[{
+    ads:[{
       iconPath: "../../image/area.png",
       id: 1,
       width:0.1,
@@ -146,15 +146,13 @@ Page({
         anchorY:-20,//字体大小乘以0.75,多行就再乘以行数
         textAlign: 'center'
       }
-    }],
-    mapWidth:'',
-    mapHeight:''
+    }]
   },
   toaddress:function(e){
     console.log(e);
     var _this=this;
     _this.setData({
-      markers:_this.data.ad
+      markers:_this.data.ads
     })
   },
   bdt:function(e){//点击地图获取当前位置坐标
@@ -169,9 +167,9 @@ Page({
    */
   onLoad: function(options) {
     var sy = wx.getSystemInfoSync(),mapWidth = sy.windowWidth*2,mapHeight = sy.windowHeight*2;
-    this.setData({
-      mapWidth:mapWidth,
-      mapHeight:mapHeight
-    })
+    // this.setData({
+    //   mapWidth:mapWidth,
+    //   mapHeight:mapHeight
+    // })
   }
 })
